@@ -1,0 +1,3877 @@
+<!-- Pixel Demand Propostas - Elementor-safe v2. Cole este arquivo inteiro no widget HTML do Elementor. -->
+<style>
+      @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+      .pd-proposal,
+      .pd-admin-bar,
+      .pd-admin-drawer,
+      .pd-admin-backdrop,
+      .pd-admin-toast,
+      .pd-quick-edit-modal {
+        --pd-bg: #050505;
+        --pd-graphite: #111010;
+        --pd-panel: #1b181a;
+        --pd-panel-2: #211f20;
+        --pd-line: rgba(255, 255, 255, 0.13);
+        --pd-line-soft: rgba(255, 255, 255, 0.08);
+        --pd-line-lime: rgba(45, 255, 18, 0.45);
+        --pd-lime: #2dff12;
+        --pd-text: #f8f8f4;
+        --pd-muted: #bdb7b7;
+        --pd-soft: #8c8686;
+        --pd-radius: 18px;
+        --pd-radius-lg: 30px;
+        --pd-display: "Nokia Expanded", "NokiaPureHeadline", "Eurostile Extended", "Arial Black", Impact, sans-serif;
+        --pd-body: "Plus Jakarta Sans", Inter, "Segoe UI", Arial, sans-serif;
+        --pd-brand-font: "Nokia Expanded", "Eurostile Extended", "Arial Black", Impact, sans-serif;
+        --pd-container: min(1180px, calc(100vw - 40px));
+        --pd-brand-icon-url: url("imagens identidade visual pixel demand/icone pixel demand.png");
+      }
+
+      .pd-proposal,
+      .pd-proposal * {
+        box-sizing: border-box;
+      }
+
+
+      .pd-proposal::before {
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        pointer-events: none;
+        content: "";
+        background:
+          linear-gradient(90deg, color-mix(in srgb, var(--pd-lime) 7%, transparent) 1px, transparent 1px),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+        background-size: 72px 72px;
+        mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.88) 42%, transparent 100%);
+      }
+
+      .pd-proposal::after {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        content: "";
+        opacity: 0.16;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+        mix-blend-mode: soft-light;
+      }
+
+      .pd-proposal {
+        position: relative;
+        isolation: isolate;
+        width: 100%;
+        max-width: 100%;
+        min-height: 100vh;
+        overflow-x: clip;
+        color: var(--pd-text);
+        background:
+          radial-gradient(circle at 82% 0%, color-mix(in srgb, var(--pd-lime) 18%, transparent), transparent 23rem),
+          radial-gradient(circle at 5% 12%, color-mix(in srgb, var(--pd-lime) 7%, transparent), transparent 25rem),
+          linear-gradient(180deg, #020202 0%, var(--pd-bg) 44%, #090808 100%);
+        font-family: var(--pd-body);
+        text-rendering: geometricPrecision;
+      }
+
+      .pd-proposal * {
+        box-sizing: border-box;
+      }
+
+      .pd-proposal a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .pd-proposal button {
+        appearance: none;
+        font: inherit;
+      }
+
+      .pd-proposal img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .pd-proposal figure {
+        margin: 0;
+      }
+
+      .pd-proposal section {
+        max-width: 100%;
+      }
+
+      .pd-proposal ul,
+      .pd-proposal li {
+        list-style: none !important;
+      }
+
+      .pd-proposal ul {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+      }
+
+      .pd-proposal li::marker {
+        content: "" !important;
+      }
+
+      .pd-proposal h1,
+      .pd-proposal h2,
+      .pd-proposal h3,
+      .pd-proposal p {
+        margin-top: 0;
+      }
+
+      .pd-image-holder-broken {
+        min-height: 118px !important;
+        display: grid;
+        place-items: center;
+        padding: 18px !important;
+        background:
+          linear-gradient(135deg, color-mix(in srgb, var(--pd-lime) 8%, transparent), transparent),
+          rgba(255, 255, 255, 0.035) !important;
+      }
+
+      .pd-image-holder-broken::after {
+        display: none !important;
+      }
+
+      .pd-image-fallback {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        min-height: 38px;
+        padding: 9px 13px;
+        color: var(--pd-muted);
+        border: 1px solid var(--pd-line);
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.32);
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-align: center;
+      }
+
+      .pd-topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        width: var(--pd-container);
+        min-height: 76px;
+        margin: 0 auto;
+        padding: 14px 0;
+        backdrop-filter: blur(18px);
+      }
+
+      .pd-brand {
+        display: inline-flex;
+        flex: 0 0 auto;
+        gap: 12px;
+        align-items: center;
+        min-width: 0;
+        font-family: var(--pd-brand-font);
+        font-size: 0.76rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .pd-brand img {
+        flex: 0 0 auto;
+        object-fit: contain;
+      }
+
+      .pd-brand-symbol {
+        width: 34px;
+        height: 34px;
+        object-fit: contain;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.16));
+      }
+
+      .pd-brand-wordmark {
+        width: clamp(148px, 17vw, 214px);
+        height: auto;
+        padding: 8px 12px;
+        border: 1px solid color-mix(in srgb, var(--pd-lime) 26%, transparent);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.92);
+      }
+
+      .pd-nav {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        max-width: 100%;
+        padding: 6px;
+        overflow-x: auto;
+        color: var(--pd-muted);
+        border: 1px solid var(--pd-line);
+        border-radius: 999px;
+        background: rgba(17, 17, 17, 0.74);
+        scrollbar-width: none;
+      }
+
+      .pd-nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      .pd-nav a {
+        flex: 0 0 auto;
+        min-height: 34px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        white-space: nowrap;
+        transition: 180ms ease;
+      }
+
+      .pd-nav a:hover {
+        color: #050505;
+        background: var(--pd-lime);
+      }
+
+      .pd-main {
+        width: var(--pd-container);
+        margin: 0 auto;
+        padding: clamp(22px, 4vw, 48px) 0 76px;
+      }
+
+      .pd-hero {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1.14fr) minmax(280px, 0.68fr);
+        gap: clamp(16px, 2.6vw, 34px);
+        align-items: stretch;
+        min-height: min(760px, calc(100vh - 118px));
+        padding-bottom: clamp(44px, 7vw, 84px);
+      }
+
+      .pd-hero-copy {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 0;
+        min-height: 560px;
+        padding: clamp(28px, 5.4vw, 72px);
+        overflow: hidden;
+        border: 1px solid var(--pd-line);
+        border-radius: var(--pd-radius-lg);
+        background:
+          linear-gradient(135deg, color-mix(in srgb, var(--pd-lime) 14%, transparent), transparent 38%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.016)),
+          var(--pd-graphite);
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+      }
+
+      .pd-hero-copy::before {
+        position: absolute;
+        top: -90px;
+        right: -105px;
+        width: clamp(190px, 28vw, 360px);
+        height: clamp(190px, 28vw, 360px);
+        content: "";
+        background: var(--pd-lime);
+        border-radius: 46%;
+        opacity: 0.92;
+      }
+
+      .pd-hero-copy::after {
+        position: absolute;
+        right: max(-80px, -7vw);
+        bottom: -50px;
+        width: min(42vw, 450px);
+        aspect-ratio: 1;
+        content: "";
+        background: var(--pd-brand-icon-url) center / contain no-repeat;
+        opacity: 0.48;
+        filter: drop-shadow(0 26px 36px rgba(0, 0, 0, 0.45));
+        transform: rotate(-9deg);
+      }
+
+      .pd-hero-copy > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .pd-eyebrow,
+      .pd-kicker {
+        color: var(--pd-lime);
+        font-size: clamp(0.7rem, 1.1vw, 0.82rem);
+        font-weight: 900;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .pd-hero h1 {
+        max-width: 11ch;
+        margin: 22px 0 0;
+        font-family: var(--pd-display);
+        font-size: clamp(3rem, 7.2vw, 6.45rem);
+        font-weight: 900;
+        line-height: 0.92;
+        letter-spacing: -0.055em;
+        text-transform: uppercase;
+      }
+
+      .pd-hero h1 span {
+        display: block;
+        color: var(--pd-lime);
+      }
+
+      .pd-lead {
+        max-width: 620px;
+        margin: 28px 0 0;
+        color: #ece7e7;
+        font-size: clamp(1rem, 1.45vw, 1.22rem);
+        line-height: 1.72;
+      }
+
+      .pd-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 34px;
+      }
+
+      .pd-button {
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 14px 19px;
+        border: 1px solid var(--pd-line);
+        border-radius: 999px;
+        color: var(--pd-text);
+        background: rgba(255, 255, 255, 0.06);
+        font-size: 0.88rem;
+        font-weight: 900;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
+      }
+
+      .pd-button:hover {
+        transform: translateY(-2px);
+        border-color: var(--pd-line-lime);
+      }
+
+      .pd-button.primary {
+        color: #030303;
+        border-color: transparent;
+        background: var(--pd-lime);
+        box-shadow: 0 0 28px color-mix(in srgb, var(--pd-lime) 24%, transparent);
+      }
+
+      .pd-button.small {
+        min-height: 40px;
+        padding: 10px 14px;
+        font-size: 0.78rem;
+      }
+
+      .pd-hero-side {
+        display: grid;
+        gap: 14px;
+        align-content: end;
+        min-width: 0;
+      }
+
+      .pd-brand-showcase {
+        position: relative;
+        min-height: 260px;
+        padding: clamp(18px, 2.6vw, 28px);
+        overflow: hidden;
+        border: 1px solid var(--pd-line);
+        border-radius: var(--pd-radius);
+        background:
+          linear-gradient(150deg, var(--pd-lime) 0 46%, rgba(255, 255, 255, 0.96) 46% 100%);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+      }
+
+      .pd-brand-showcase img {
+        position: relative;
+        z-index: 1;
+        display: block;
+        object-fit: contain;
+      }
+
+      .pd-brand-showcase .pd-showcase-logo {
+        width: min(92%, 360px);
+        margin-left: auto;
+        padding: 14px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.88);
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.2);
+      }
+
+      .pd-brand-showcase .pd-showcase-star {
+        position: absolute;
+        left: -54px;
+        bottom: -62px;
+        width: clamp(190px, 24vw, 300px);
+        opacity: 0.9;
+        filter: drop-shadow(0 22px 26px rgba(0, 0, 0, 0.28));
+        transform: rotate(-10deg);
+      }
+
+      .pd-metric,
+      .pd-side-note,
+      .pd-panel,
+      .pd-card,
+      .pd-timeline-item,
+      .pd-condition,
+      .pd-gallery-card,
+      .pd-scope-box {
+        border: 1px solid var(--pd-line);
+        border-radius: var(--pd-radius);
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.062), rgba(255, 255, 255, 0.022)),
+          var(--pd-panel);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+      }
+
+      .pd-metric,
+      .pd-side-note {
+        padding: clamp(22px, 3vw, 32px);
+      }
+
+      .pd-metric strong {
+        display: block;
+        color: var(--pd-lime);
+        font-family: var(--pd-display);
+        font-size: clamp(3rem, 6vw, 5.2rem);
+        line-height: 0.9;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+      }
+
+      .pd-metric span,
+      .pd-side-note p {
+        display: block;
+        margin: 14px 0 0;
+        color: var(--pd-muted);
+        line-height: 1.58;
+      }
+
+      .pd-side-note h2 {
+        margin: 0;
+        font-size: clamp(1.2rem, 2vw, 1.42rem);
+        line-height: 1.2;
+        letter-spacing: -0.035em;
+      }
+
+      .pd-section {
+        display: grid;
+        grid-template-columns: minmax(250px, 0.48fr) minmax(0, 1fr);
+        gap: clamp(22px, 4vw, 56px);
+        align-items: start;
+        padding: clamp(56px, 9vw, 110px) 0;
+      }
+
+      .pd-section > * {
+        min-width: 0;
+      }
+
+      .pd-section-heading {
+        position: sticky;
+        top: 104px;
+        align-self: start;
+        min-width: 0;
+      }
+
+      .pd-section-heading h2 {
+        max-width: 100%;
+        margin: 12px 0 0;
+        font-family: var(--pd-display);
+        font-size: clamp(2.35rem, 5.2vw, 5.4rem);
+        line-height: 0.92;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+        overflow-wrap: break-word;
+      }
+
+      .pd-section-heading p {
+        max-width: 36rem;
+        margin: 18px 0 0;
+        color: var(--pd-muted);
+        line-height: 1.7;
+      }
+
+      .pd-panel {
+        min-width: 0;
+        padding: clamp(22px, 4vw, 38px);
+      }
+
+      .pd-identity-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 0.88fr) minmax(260px, 1fr);
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .pd-identity-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .pd-identity-copy .pd-intro-text {
+        margin-bottom: 24px;
+      }
+
+      .pd-identity-logo {
+        width: min(100%, 380px);
+        padding: 12px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.94);
+      }
+
+      .pd-identity-art {
+        position: relative;
+        min-height: 340px;
+        overflow: hidden;
+        border: 1px solid var(--pd-line-lime);
+        border-radius: var(--pd-radius);
+        background: #111;
+      }
+
+      .pd-identity-art img {
+        width: 100%;
+        height: 100%;
+        min-height: 340px;
+        object-fit: cover;
+      }
+
+      .pd-identity-art::after {
+        position: absolute;
+        inset: 0;
+        content: "";
+        background:
+          linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.74)),
+          linear-gradient(90deg, color-mix(in srgb, var(--pd-lime) 24%, transparent), transparent 58%);
+      }
+
+      .pd-intro-text {
+        margin: 0;
+        color: #ebe8e8;
+        font-size: clamp(1.25rem, 2.25vw, 2rem);
+        font-weight: 800;
+        line-height: 1.44;
+        letter-spacing: -0.04em;
+      }
+
+      .pd-list {
+        display: grid;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .pd-list li {
+        position: relative;
+        padding: 17px 18px 17px 42px;
+        color: #e7e2e2;
+        border: 1px solid var(--pd-line);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.035);
+        line-height: 1.6;
+      }
+
+      .pd-list li::before {
+        position: absolute;
+        top: 24px;
+        left: 18px;
+        width: 8px;
+        height: 8px;
+        content: "";
+        background: var(--pd-lime);
+        box-shadow: 0 0 16px color-mix(in srgb, var(--pd-lime) 55%, transparent);
+      }
+
+      .pd-grid-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr));
+        gap: 14px;
+        min-width: 0;
+      }
+
+      .pd-card,
+      .pd-condition {
+        position: relative;
+        min-width: 0;
+        min-height: 245px;
+        padding: clamp(21px, 2.2vw, 28px);
+        overflow: hidden;
+        transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+      }
+
+      .pd-card > *,
+      .pd-condition > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .pd-card:hover,
+      .pd-condition:hover,
+      .pd-card.is-active {
+        transform: translateY(-4px);
+        border-color: var(--pd-line-lime);
+        background:
+          linear-gradient(180deg, color-mix(in srgb, var(--pd-lime) 9%, transparent), rgba(255, 255, 255, 0.02)),
+          var(--pd-panel);
+      }
+
+      .pd-card::after {
+        position: absolute;
+        right: -42px;
+        bottom: -42px;
+        width: 116px;
+        height: 116px;
+        content: "";
+        border: 1px solid color-mix(in srgb, var(--pd-lime) 34%, transparent);
+        border-radius: 50%;
+      }
+
+      .pd-index {
+        display: inline-grid;
+        place-items: center;
+        width: 36px;
+        height: 36px;
+        color: #020202;
+        background: var(--pd-lime);
+        border-radius: 50%;
+        font-size: 0.78rem;
+        font-weight: 900;
+      }
+
+      .pd-card h3,
+      .pd-condition h3 {
+        margin: 25px 0 12px;
+        font-family: var(--pd-body);
+        font-size: clamp(1.08rem, 1.6vw, 1.28rem);
+        font-weight: 800;
+        line-height: 1.18;
+        letter-spacing: -0.025em;
+      }
+
+      .pd-card p,
+      .pd-condition p {
+        margin: 0;
+        color: var(--pd-muted);
+        line-height: 1.62;
+      }
+
+      .pd-price {
+        display: block;
+        margin-top: 26px;
+        color: var(--pd-lime);
+        font-family: var(--pd-display);
+        font-size: clamp(2rem, 3.8vw, 3.1rem);
+        font-weight: 900;
+        line-height: 0.96;
+        letter-spacing: -0.05em;
+      }
+
+      .pd-featured {
+        border-color: var(--pd-line-lime);
+        background:
+          linear-gradient(160deg, color-mix(in srgb, var(--pd-lime) 18%, transparent), transparent 48%),
+          var(--pd-panel-2);
+      }
+
+      .pd-tag {
+        display: inline-flex;
+        margin-bottom: 10px;
+        padding: 7px 10px;
+        color: #030303;
+        background: var(--pd-lime);
+        border-radius: 999px;
+        font-size: 0.68rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .pd-card-actions {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 20px;
+      }
+
+      .pd-accordion {
+        display: grid;
+        gap: 10px;
+        min-width: 0;
+      }
+
+      .pd-accordion-item {
+        overflow: hidden;
+        border: 1px solid var(--pd-line);
+        border-radius: var(--pd-radius);
+        background: rgba(255, 255, 255, 0.035);
+      }
+
+      .pd-accordion-trigger {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        min-height: 72px;
+        padding: 0 20px;
+        color: var(--pd-text);
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        text-align: left;
+      }
+
+      .pd-accordion-trigger strong {
+        padding-right: 16px;
+        font-size: 1rem;
+        line-height: 1.32;
+      }
+
+      .pd-accordion-trigger span {
+        display: grid;
+        place-items: center;
+        flex: 0 0 auto;
+        width: 34px;
+        height: 34px;
+        color: #050505;
+        background: var(--pd-lime);
+        border-radius: 50%;
+        font-size: 1.2rem;
+        font-weight: 900;
+        transition: transform 180ms ease;
+      }
+
+      .pd-accordion-item.open .pd-accordion-trigger span {
+        transform: rotate(45deg);
+      }
+
+      .pd-accordion-panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 260ms ease;
+      }
+
+      .pd-accordion-content {
+        padding: 0 20px 22px;
+        color: var(--pd-muted);
+        line-height: 1.7;
+      }
+
+      .pd-accordion-content .pd-list {
+        margin-top: 16px;
+      }
+
+      .pd-timeline {
+        display: grid;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .pd-timeline-item {
+        display: grid;
+        grid-template-columns: minmax(90px, 0.2fr) minmax(0, 1fr);
+        gap: 20px;
+        align-items: start;
+        padding: clamp(20px, 2.4vw, 26px);
+      }
+
+      .pd-timeline-item time {
+        color: var(--pd-lime);
+        font-weight: 900;
+        line-height: 1.25;
+      }
+
+      .pd-timeline-item h3 {
+        margin: 0 0 8px;
+        font-size: 1.08rem;
+        line-height: 1.2;
+        letter-spacing: -0.03em;
+      }
+
+      .pd-timeline-item p {
+        margin: 0;
+        color: var(--pd-muted);
+        line-height: 1.62;
+      }
+
+      .pd-scope-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .pd-scope-box {
+        padding: clamp(22px, 3vw, 32px);
+      }
+
+      .pd-scope-box h3 {
+        margin: 0 0 18px;
+        font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+        line-height: 1.15;
+        letter-spacing: -0.035em;
+      }
+
+      .pd-investment {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+        gap: 24px;
+        align-items: center;
+        margin: clamp(30px, 5vw, 50px) 0;
+        padding: clamp(28px, 5vw, 54px);
+        overflow: hidden;
+        border-radius: var(--pd-radius-lg);
+        color: #050505;
+        background: var(--pd-lime);
+      }
+
+      .pd-investment::after {
+        position: absolute;
+        top: -90px;
+        right: -110px;
+        width: 360px;
+        height: 360px;
+        content: "";
+        background: var(--pd-brand-icon-url) center / contain no-repeat;
+        opacity: 0.48;
+        mix-blend-mode: luminosity;
+      }
+
+      .pd-investment h2 {
+        position: relative;
+        z-index: 1;
+        max-width: min(100%, 11ch);
+        margin: 0;
+        font-family: var(--pd-display);
+        font-size: clamp(2.7rem, 6.4vw, 6.2rem);
+        line-height: 0.9;
+        letter-spacing: -0.065em;
+        text-transform: uppercase;
+        overflow-wrap: break-word;
+      }
+
+      .pd-investment-summary {
+        position: relative;
+        z-index: 1;
+        justify-self: end;
+        width: 100%;
+        max-width: 420px;
+        min-width: 0;
+        padding: clamp(22px, 3vw, 30px);
+        color: var(--pd-text);
+        border-radius: var(--pd-radius);
+        background: rgba(5, 5, 5, 0.9);
+      }
+
+      .pd-investment-summary strong {
+        display: block;
+        color: var(--pd-lime);
+        font-family: var(--pd-display);
+        font-size: clamp(2.2rem, 5vw, 4.4rem);
+        line-height: 1;
+        letter-spacing: -0.035em;
+        overflow-wrap: anywhere;
+      }
+
+      .pd-investment-summary span {
+        display: block;
+        margin-top: 12px;
+        color: var(--pd-muted);
+        line-height: 1.6;
+      }
+
+      .pd-gallery {
+        display: grid;
+        grid-template-columns: 0.7fr 1fr;
+        gap: 16px;
+        align-items: stretch;
+        margin-top: 18px;
+      }
+
+      .pd-gallery-intro {
+        min-height: 220px;
+        padding: clamp(22px, 3vw, 34px);
+        border: 1px solid var(--pd-line-lime);
+        border-radius: var(--pd-radius);
+        background:
+          linear-gradient(160deg, color-mix(in srgb, var(--pd-lime) 15%, transparent), transparent 44%),
+          var(--pd-panel-2);
+      }
+
+      .pd-gallery-intro h3 {
+        margin: 12px 0 0;
+        font-family: var(--pd-display);
+        font-size: clamp(1.8rem, 4vw, 3.55rem);
+        line-height: 0.94;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+      }
+
+      .pd-gallery-intro p {
+        margin: 18px 0 0;
+        color: var(--pd-muted);
+        line-height: 1.65;
+      }
+
+      .pd-gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .pd-gallery-card {
+        position: relative;
+        min-height: 220px;
+        overflow: hidden;
+      }
+
+      .pd-gallery-card img {
+        width: 100%;
+        height: 100%;
+        min-height: 220px;
+        object-fit: cover;
+        transition: transform 280ms ease;
+      }
+
+      .pd-gallery-card:hover img {
+        transform: scale(1.04);
+      }
+
+      .pd-gallery-card figcaption {
+        position: absolute;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        z-index: 1;
+        padding: 12px;
+        color: var(--pd-text);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 14px;
+        background: rgba(0, 0, 0, 0.66);
+        backdrop-filter: blur(12px);
+        font-size: 0.8rem;
+        font-weight: 800;
+      }
+
+      .pd-final-cta {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 26px;
+        align-items: center;
+        margin-top: 72px;
+        padding: clamp(28px, 5vw, 54px);
+        border: 1px solid var(--pd-line);
+        border-radius: var(--pd-radius-lg);
+        background:
+          linear-gradient(135deg, color-mix(in srgb, var(--pd-lime) 16%, transparent), transparent 42%),
+          var(--pd-graphite);
+      }
+
+      .pd-final-cta h2 {
+        margin: 12px 0 0;
+        font-family: var(--pd-display);
+        font-size: clamp(2.2rem, 4.6vw, 4.5rem);
+        line-height: 0.94;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+      }
+
+      .pd-final-cta p {
+        max-width: 680px;
+        margin: 16px 0 0;
+        color: var(--pd-muted);
+        line-height: 1.7;
+      }
+
+      .pd-footer-note {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        margin-top: 24px;
+        padding-top: 20px;
+        color: var(--pd-soft);
+        border-top: 1px solid var(--pd-line-soft);
+        font-size: 0.78rem;
+        line-height: 1.5;
+      }
+
+      .pd-reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 520ms ease, transform 520ms ease;
+      }
+
+      .pd-reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .pd-admin-bar,
+      .pd-admin-drawer,
+      .pd-admin-backdrop,
+      .pd-admin-toast,
+      .pd-quick-edit-modal {
+        font-family: var(--pd-body);
+      }
+
+      .pd-admin-bar[hidden],
+      .pd-admin-drawer[hidden],
+      .pd-admin-backdrop[hidden],
+      .pd-admin-toast[hidden],
+      .pd-quick-edit-modal[hidden] {
+        display: none !important;
+      }
+
+      .pd-admin-bar {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        z-index: 120;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+        max-width: min(760px, calc(100vw - 36px));
+        padding: 10px;
+        border: 1px solid color-mix(in srgb, var(--pd-lime) 34%, transparent);
+        border-radius: 999px;
+        background: rgba(12, 12, 12, 0.88);
+        box-shadow: 0 22px 70px rgba(0, 0, 0, 0.46);
+        backdrop-filter: blur(18px);
+      }
+
+      .pd-admin-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 12px;
+        color: var(--pd-lime);
+        border: 1px solid color-mix(in srgb, var(--pd-lime) 28%, transparent);
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--pd-lime) 10%, transparent);
+        font-size: 0.68rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .pd-admin-badge::before {
+        width: 8px;
+        height: 8px;
+        content: "";
+        background: var(--pd-lime);
+        border-radius: 50%;
+        box-shadow: 0 0 16px color-mix(in srgb, var(--pd-lime) 70%, transparent);
+      }
+
+      .pd-admin-button {
+        min-height: 38px;
+        padding: 9px 12px;
+        color: var(--pd-text);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        font-size: 0.76rem;
+        font-weight: 800;
+        cursor: pointer;
+        transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+      }
+
+      .pd-admin-button:hover {
+        transform: translateY(-1px);
+        border-color: color-mix(in srgb, var(--pd-lime) 45%, transparent);
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .pd-admin-button.primary {
+        color: #050505;
+        border-color: transparent;
+        background: var(--pd-lime);
+      }
+
+      .pd-admin-button.danger {
+        color: #ffb4b4;
+      }
+
+      .pd-admin-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 130;
+        background: rgba(0, 0, 0, 0.64);
+        backdrop-filter: blur(5px);
+      }
+
+      .pd-admin-drawer {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 140;
+        display: flex;
+        flex-direction: column;
+        width: min(560px, 100vw);
+        color: var(--pd-text);
+        border-left: 1px solid var(--pd-line);
+        background: #101010;
+        box-shadow: -24px 0 80px rgba(0, 0, 0, 0.52);
+      }
+
+      .pd-admin-drawer-header {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 22px 22px 18px;
+        border-bottom: 1px solid var(--pd-line-soft);
+      }
+
+      .pd-admin-drawer-header h2 {
+        margin: 6px 0 0;
+        font-family: var(--pd-display);
+        font-size: 1.45rem;
+        line-height: 1;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+      }
+
+      .pd-admin-close {
+        display: grid;
+        place-items: center;
+        flex: 0 0 auto;
+        width: 38px;
+        height: 38px;
+        color: var(--pd-text);
+        border: 1px solid var(--pd-line);
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.06);
+        cursor: pointer;
+      }
+
+      .pd-admin-drawer-body {
+        flex: 1;
+        min-height: 0;
+        overflow: auto;
+        padding: 18px 22px 96px;
+      }
+
+      .pd-admin-drawer-footer {
+        position: sticky;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 14px 22px;
+        border-top: 1px solid var(--pd-line-soft);
+        background: rgba(16, 16, 16, 0.94);
+        backdrop-filter: blur(16px);
+      }
+
+      .pd-admin-section {
+        margin-bottom: 12px;
+        border: 1px solid var(--pd-line-soft);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.035);
+        overflow: hidden;
+      }
+
+      .pd-admin-section > summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 54px;
+        padding: 0 16px;
+        color: var(--pd-lime);
+        cursor: pointer;
+        font-size: 0.76rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .pd-admin-section > summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .pd-admin-section > summary::after {
+        content: "+";
+        color: #050505;
+        width: 28px;
+        height: 28px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--pd-lime);
+        font-size: 1rem;
+      }
+
+      .pd-admin-section[open] > summary::after {
+        transform: rotate(45deg);
+      }
+
+      .pd-admin-fields {
+        display: grid;
+        gap: 12px;
+        padding: 0 16px 16px;
+      }
+
+      .pd-admin-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .pd-admin-item {
+        display: grid;
+        gap: 10px;
+        padding: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      .pd-admin-label {
+        display: grid;
+        gap: 7px;
+        color: var(--pd-muted);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .pd-admin-label input,
+      .pd-admin-label textarea,
+      .pd-admin-label select {
+        width: 100%;
+        min-height: 42px;
+        padding: 11px 12px;
+        color: var(--pd-text);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 12px;
+        background: #1a1a1a;
+        font: 500 0.9rem/1.45 var(--pd-body);
+        outline: none;
+      }
+
+      .pd-admin-label textarea {
+        min-height: 108px;
+        resize: vertical;
+      }
+
+      .pd-admin-label input:focus,
+      .pd-admin-label textarea:focus,
+      .pd-admin-label select:focus {
+        border-color: color-mix(in srgb, var(--pd-lime) 70%, transparent);
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--pd-lime) 12%, transparent);
+      }
+
+      .pd-admin-check {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        color: var(--pd-text);
+        font-size: 0.86rem;
+        font-weight: 700;
+      }
+
+      .pd-admin-check input {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--pd-lime);
+      }
+
+      .pd-admin-help {
+        margin: 0;
+        color: var(--pd-soft);
+        font-size: 0.78rem;
+        line-height: 1.5;
+      }
+
+      .pd-admin-toast {
+        position: fixed;
+        left: 50%;
+        bottom: 88px;
+        z-index: 180;
+        transform: translateX(-50%);
+        max-width: calc(100vw - 32px);
+        padding: 12px 16px;
+        color: #050505;
+        border-radius: 999px;
+        background: var(--pd-lime);
+        box-shadow: 0 18px 52px color-mix(in srgb, var(--pd-lime) 24%, transparent);
+        font-size: 0.82rem;
+        font-weight: 900;
+      }
+
+      .pd-proposal.pd-admin-active [data-pd-edit] {
+        position: relative;
+        cursor: pointer;
+        outline: 1px dashed transparent;
+        outline-offset: 4px;
+      }
+
+      .pd-proposal.pd-admin-active [data-pd-edit]:hover {
+        outline-color: color-mix(in srgb, var(--pd-lime) 82%, transparent);
+        box-shadow: 0 0 0 4px color-mix(in srgb, var(--pd-lime) 9%, transparent);
+      }
+
+      .pd-proposal.pd-admin-active [data-pd-edit]:not(img):hover::after {
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        z-index: 12;
+        padding: 5px 8px;
+        color: #050505;
+        content: "Editar";
+        border-radius: 999px;
+        background: var(--pd-lime);
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.26);
+        font: 900 0.62rem/1 var(--pd-body);
+        letter-spacing: 0.08em;
+        pointer-events: none;
+        text-transform: uppercase;
+      }
+
+      .pd-proposal.pd-admin-active img[data-pd-edit]:hover {
+        outline: 1px dashed color-mix(in srgb, var(--pd-lime) 82%, transparent);
+        outline-offset: 4px;
+      }
+
+      .pd-quick-edit-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 190;
+        display: grid;
+        place-items: center;
+        padding: 18px;
+        color: var(--pd-text);
+        background: rgba(0, 0, 0, 0.68);
+        backdrop-filter: blur(8px);
+      }
+
+      .pd-quick-edit-card {
+        display: grid;
+        gap: 14px;
+        width: min(560px, 100%);
+        max-height: min(760px, calc(100vh - 36px));
+        overflow: auto;
+        padding: 18px;
+        border: 1px solid color-mix(in srgb, var(--pd-lime) 32%, transparent);
+        border-radius: 22px;
+        background: #101010;
+        box-shadow: 0 28px 90px rgba(0, 0, 0, 0.58);
+      }
+
+      .pd-quick-edit-header {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+      .pd-quick-edit-header h2 {
+        margin: 0;
+        font-family: var(--pd-display);
+        font-size: 1.35rem;
+        line-height: 1;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+      }
+
+      .pd-quick-edit-path {
+        margin: 5px 0 0;
+        color: var(--pd-soft);
+        font-size: 0.76rem;
+        line-height: 1.35;
+        overflow-wrap: anywhere;
+      }
+
+      .pd-quick-edit-tabs {
+        display: flex;
+        gap: 8px;
+        padding: 4px;
+        border: 1px solid var(--pd-line-soft);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.035);
+      }
+
+      .pd-quick-edit-tab {
+        flex: 1 1 0;
+        min-height: 36px;
+        color: var(--pd-muted);
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        font-size: 0.78rem;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      .pd-quick-edit-tab.is-active {
+        color: #050505;
+        background: var(--pd-lime);
+      }
+
+      .pd-quick-edit-pane[hidden] {
+        display: none !important;
+      }
+
+      .pd-quick-edit-fields {
+        display: grid;
+        gap: 12px;
+      }
+
+      .pd-quick-edit-preview {
+        display: grid;
+        min-height: 120px;
+        place-items: center;
+        overflow: hidden;
+        border: 1px solid var(--pd-line);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .pd-quick-edit-preview img {
+        max-height: 220px;
+        object-fit: contain;
+      }
+
+      .pd-quick-edit-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: flex-end;
+      }
+
+      @media print {
+        @page {
+          margin: 10mm;
+        }
+
+        *,
+        *::before,
+        *::after {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        body {
+          background: #050505 !important;
+        }
+
+        .pd-proposal::before,
+        .pd-proposal::after,
+        .pd-admin-bar,
+        .pd-admin-drawer,
+        .pd-admin-backdrop,
+        .pd-admin-toast,
+        .pd-quick-edit-modal,
+        .pd-nav,
+        .pd-card-actions,
+        .pd-actions .pd-button:not(.primary) {
+          display: none !important;
+        }
+
+        .pd-proposal.pd-admin-active [data-pd-edit],
+        .pd-proposal.pd-admin-active [data-pd-edit]:hover {
+          outline: 0 !important;
+          box-shadow: none !important;
+        }
+
+        .pd-proposal.pd-admin-active [data-pd-edit]::after {
+          display: none !important;
+        }
+
+        .pd-proposal {
+          color: var(--pd-text) !important;
+          background:
+            radial-gradient(circle at 82% 0%, color-mix(in srgb, var(--pd-lime) 14%, transparent), transparent 23rem),
+            linear-gradient(180deg, #020202 0%, var(--pd-bg) 44%, #090808 100%) !important;
+        }
+
+        .pd-topbar {
+          position: static !important;
+          width: 100% !important;
+          min-height: auto !important;
+          padding: 0 0 12px !important;
+          backdrop-filter: none !important;
+        }
+
+        .pd-main {
+          width: 100% !important;
+          padding: 0 !important;
+        }
+
+        .pd-hero,
+        .pd-section,
+        .pd-investment,
+        .pd-final-cta {
+          min-height: auto !important;
+          padding: 18px 0 !important;
+          margin: 0 !important;
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+
+        .pd-hero-copy,
+        .pd-panel,
+        .pd-card,
+        .pd-condition,
+        .pd-timeline-item,
+        .pd-scope-box,
+        .pd-side-note,
+        .pd-metric,
+        .pd-brand-showcase,
+        .pd-investment-summary,
+        .pd-final-cta {
+          color: var(--pd-text) !important;
+          border: 1px solid var(--pd-line) !important;
+          background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+            var(--pd-panel) !important;
+          box-shadow: none !important;
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+
+        .pd-investment {
+          color: #050505 !important;
+          background: var(--pd-lime) !important;
+          box-shadow: none !important;
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+
+        .pd-hero-copy::before,
+        .pd-hero-copy::after,
+        .pd-investment::after,
+        .pd-card::after {
+          opacity: 0.22 !important;
+          box-shadow: none !important;
+        }
+
+        .pd-section-heading {
+          position: static !important;
+          margin-bottom: 12px !important;
+        }
+
+        .pd-eyebrow,
+        .pd-kicker,
+        .pd-hero h1 span,
+        .pd-section-heading h2,
+        .pd-metric strong,
+        .pd-price,
+        .pd-investment-summary strong,
+        .pd-final-cta h2,
+        .pd-timeline-item time {
+          color: var(--pd-lime) !important;
+        }
+
+        .pd-investment h2 {
+          color: #050505 !important;
+        }
+
+        .pd-hero h1,
+        .pd-section-heading h2,
+        .pd-investment h2,
+        .pd-final-cta h2 {
+          max-width: none !important;
+          font-size: 28pt !important;
+          letter-spacing: 0 !important;
+          line-height: 1.02 !important;
+        }
+
+        .pd-lead,
+        .pd-section-heading p,
+        .pd-card p,
+        .pd-condition p,
+        .pd-timeline-item p,
+        .pd-side-note p,
+        .pd-investment-summary span,
+        .pd-final-cta p,
+        .pd-list li {
+          color: var(--pd-muted) !important;
+        }
+
+        .pd-grid-3,
+        .pd-scope-grid,
+        .pd-timeline,
+        .pd-gallery-grid {
+          display: grid !important;
+          grid-template-columns: 1fr !important;
+          gap: 10px !important;
+        }
+
+        .pd-accordion-panel {
+          max-height: none !important;
+          overflow: visible !important;
+        }
+
+        .pd-accordion-trigger {
+          min-height: auto !important;
+          padding: 14px 16px !important;
+        }
+
+        .pd-accordion-trigger span {
+          display: none !important;
+        }
+
+        .pd-reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+
+        .pd-button.primary {
+          color: #050505 !important;
+          border: 1px solid transparent !important;
+          background: var(--pd-lime) !important;
+          box-shadow: none !important;
+        }
+
+        .pd-footer-note {
+          color: var(--pd-soft) !important;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .pd-proposal {
+          scroll-behavior: auto;
+        }
+
+        .pd-reveal,
+        .pd-button,
+        .pd-card,
+        .pd-condition,
+        .pd-gallery-card img,
+        .pd-accordion-panel {
+          transition: none !important;
+        }
+      }
+
+      @media (max-width: 980px) {
+        .pd-proposal {
+          --pd-container: min(100vw - 28px, 1180px);
+        }
+
+        .pd-topbar {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 12px;
+          min-height: auto;
+        }
+
+        .pd-nav {
+          width: 100%;
+        }
+
+        .pd-hero,
+        .pd-section,
+        .pd-investment,
+        .pd-final-cta,
+        .pd-gallery {
+          grid-template-columns: 1fr;
+        }
+
+        .pd-hero {
+          min-height: auto;
+        }
+
+        .pd-hero-copy {
+          min-height: 540px;
+        }
+
+        .pd-hero h1 {
+          max-width: 12ch;
+          font-size: clamp(3rem, 12vw, 6rem);
+        }
+
+        .pd-section-heading {
+          position: static;
+        }
+
+        .pd-section-heading h2 {
+          font-size: clamp(2.5rem, 10vw, 5rem);
+        }
+
+        .pd-grid-3 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .pd-identity-panel,
+        .pd-scope-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .pd-investment h2 {
+          max-width: 100%;
+        }
+
+        .pd-investment-summary {
+          justify-self: start;
+          max-width: 520px;
+        }
+
+        .pd-final-cta {
+          align-items: start;
+        }
+
+        .pd-final-cta .pd-button {
+          justify-self: start;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .pd-proposal {
+          --pd-container: min(100vw - 22px, 1180px);
+        }
+
+        .pd-main {
+          padding-top: 16px;
+        }
+
+        .pd-topbar {
+          gap: 10px;
+          padding: 10px 0;
+        }
+
+        .pd-brand {
+          max-width: 100%;
+        }
+
+        .pd-nav {
+          max-width: 100%;
+          padding: 5px;
+          scroll-snap-type: x proximity;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        .pd-nav a {
+          scroll-snap-align: start;
+          padding: 8px 12px;
+          font-size: 0.76rem;
+          word-break: normal;
+          overflow-wrap: normal;
+        }
+
+        .pd-hero {
+          gap: 14px;
+          padding-bottom: 34px;
+        }
+
+        .pd-hero-copy {
+          min-height: auto;
+          padding: 26px 20px 30px;
+          border-radius: 22px;
+        }
+
+        .pd-hero-copy::before {
+          top: -100px;
+          right: -120px;
+        }
+
+        .pd-hero-copy::after {
+          right: -68px;
+          bottom: -72px;
+          width: 82vw;
+          opacity: 0.36;
+        }
+
+        .pd-hero h1 {
+          max-width: 12ch;
+          margin-top: 18px;
+          font-size: clamp(2.18rem, 12.4vw, 3.85rem);
+          letter-spacing: -0.045em;
+        }
+
+        .pd-lead {
+          margin-top: 22px;
+          font-size: 1rem;
+          line-height: 1.6;
+        }
+
+        .pd-actions,
+        .pd-button {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .pd-metric strong {
+          font-size: clamp(3rem, 17vw, 4.2rem);
+        }
+
+        .pd-section {
+          gap: 18px;
+          padding: 38px 0;
+        }
+
+        .pd-section-heading h2,
+        .pd-final-cta h2,
+        .pd-investment h2 {
+          font-size: clamp(2rem, 11.5vw, 3.55rem);
+          letter-spacing: -0.04em;
+        }
+
+        .pd-section-heading p {
+          margin-top: 12px;
+          line-height: 1.55;
+        }
+
+        .pd-grid-3,
+        .pd-gallery-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .pd-grid-3,
+        .pd-scope-grid,
+        .pd-gallery-grid,
+        .pd-timeline {
+          gap: 10px;
+          width: 100%;
+        }
+
+        .pd-brand {
+          gap: 8px;
+        }
+
+        .pd-brand-symbol {
+          width: 30px;
+          height: 30px;
+        }
+
+        .pd-brand-wordmark {
+          width: min(168px, calc(100vw - 72px));
+          padding: 7px 10px;
+        }
+
+        .pd-brand-showcase {
+          min-height: 170px;
+        }
+
+        .pd-brand-showcase .pd-showcase-logo {
+          width: min(94%, 300px);
+        }
+
+        .pd-card,
+        .pd-condition,
+        .pd-scope-box,
+        .pd-panel {
+          width: 100%;
+          min-height: 0;
+          padding: 20px;
+          border-radius: 16px;
+        }
+
+        .pd-list {
+          gap: 9px;
+        }
+
+        .pd-list li {
+          padding: 14px 14px 14px 36px;
+          line-height: 1.52;
+        }
+
+        .pd-list li::before {
+          top: 20px;
+          left: 16px;
+        }
+
+        .pd-timeline-item {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .pd-investment {
+          padding: 26px 20px;
+          border-radius: 22px;
+        }
+
+        .pd-investment h2 {
+          max-width: 100%;
+        }
+
+        .pd-investment-summary strong {
+          font-size: clamp(2.3rem, 13vw, 3.7rem);
+        }
+
+        .pd-investment-summary {
+          width: 100%;
+          max-width: none;
+        }
+
+        .pd-final-cta {
+          margin-top: 34px;
+          padding: 26px 20px;
+          border-radius: 22px;
+        }
+
+        .pd-footer-note {
+          flex-direction: column;
+        }
+
+        .pd-admin-bar {
+          right: 10px;
+          bottom: 10px;
+          left: 10px;
+          max-width: none;
+          border-radius: 18px;
+        }
+
+        .pd-admin-button,
+        .pd-admin-badge {
+          flex: 1 1 calc(50% - 6px);
+          justify-content: center;
+          white-space: normal;
+        }
+
+        .pd-admin-drawer {
+          width: 100vw;
+        }
+
+        .pd-admin-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .pd-quick-edit-modal {
+          padding: 10px;
+          align-items: end;
+        }
+
+        .pd-quick-edit-card {
+          max-height: calc(100vh - 20px);
+          border-radius: 18px;
+        }
+
+        .pd-quick-edit-actions .pd-admin-button {
+          flex: 1 1 calc(50% - 6px);
+        }
+      }
+
+      @media (max-width: 390px) {
+        .pd-hero h1 {
+          font-size: clamp(2rem, 12vw, 3.05rem);
+        }
+
+        .pd-section-heading h2,
+        .pd-final-cta h2,
+        .pd-investment h2 {
+          font-size: clamp(1.82rem, 10.8vw, 2.75rem);
+        }
+
+        .pd-price {
+          font-size: 2.15rem;
+        }
+      }
+    
+
+      /* Elementor safety overrides */
+      .pd-proposal {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: clip;
+        isolation: isolate;
+      }
+
+      .pd-proposal .pd-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .pd-proposal ul,
+      .pd-proposal li {
+        list-style: none !important;
+        margin-left: 0 !important;
+        padding-left: 0;
+      }
+
+      .pd-proposal img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .pd-proposal section,
+      .pd-proposal article,
+      .pd-proposal figure {
+        max-width: 100%;
+      }
+
+      .pd-proposal .pd-list {
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+      }
+
+      .pd-proposal .pd-list > li {
+        position: relative !important;
+        padding: 17px 18px 17px 42px !important;
+        margin-left: 0 !important;
+        list-style: none !important;
+      }
+
+      .pd-proposal .pd-list > li::before {
+        position: absolute !important;
+        top: 24px !important;
+        left: 18px !important;
+        width: 8px !important;
+        height: 8px !important;
+        content: "" !important;
+        background: var(--pd-lime) !important;
+        box-shadow: 0 0 16px color-mix(in srgb, var(--pd-lime) 55%, transparent) !important;
+      }
+
+      @media (max-width: 640px) {
+        .pd-proposal .pd-list > li {
+          padding: 14px 14px 14px 36px !important;
+        }
+
+        .pd-proposal .pd-list > li::before {
+          top: 20px !important;
+          left: 16px !important;
+        }
+      }
+
+</style>
+    <div class="pd-proposal" id="pd-proposal-shell">
+      <header class="pd-topbar">
+        <a class="pd-brand" href="#top" aria-label="Pixel Demand">
+          <img class="pd-brand-symbol" id="pd-brand-symbol" src="imagens identidade visual pixel demand/icone pixel demand.png" alt="" data-pd-edit="image" data-pd-path="brand.icon" onerror="handleImageError(this)" />
+          <img class="pd-brand-wordmark" id="pd-brand-wordmark" src="imagens identidade visual pixel demand/PIXEL DEMAND - KV 2026-18.png" alt="Pixel Demand" data-pd-edit="image" data-pd-path="brand.wordmark" onerror="handleImageError(this)" />
+        </a>
+        <nav class="pd-nav" id="pd-nav" aria-label="Seções da proposta"></nav>
+      </header>
+
+      <main class="pd-main" id="top">
+        <div id="pd-app"></div>
+      </main>
+    </div>
+
+    <div class="pd-admin-bar" id="pd-admin-bar" data-pd-admin hidden>
+      <span class="pd-admin-badge">Modo admin</span>
+      <button class="pd-admin-button primary" type="button" id="pd-admin-visual">Editar visual</button>
+      <button class="pd-admin-button" type="button" id="pd-admin-open">Painel completo</button>
+      <button class="pd-admin-button" type="button" id="pd-admin-save">Salvar rascunho</button>
+      <button class="pd-admin-button" type="button" id="pd-admin-export-html">Exportar HTML</button>
+      <button class="pd-admin-button" type="button" id="pd-admin-export-pdf">Exportar PDF</button>
+      <button class="pd-admin-button danger" type="button" id="pd-admin-reset">Resetar</button>
+      <button class="pd-admin-button" type="button" id="pd-admin-exit">Sair</button>
+    </div>
+
+    <div class="pd-admin-backdrop" id="pd-admin-backdrop" data-pd-admin hidden></div>
+
+    <aside class="pd-admin-drawer" id="pd-admin-drawer" data-pd-admin hidden aria-hidden="true">
+      <header class="pd-admin-drawer-header">
+        <div>
+          <div class="pd-kicker">Pixel Demand</div>
+          <h2>Editor da proposta</h2>
+          <p class="pd-admin-help">As alterações editam o objeto PROPOSTA em memória. Use “Salvar rascunho” para guardar localmente.</p>
+        </div>
+        <button class="pd-admin-close" type="button" id="pd-admin-close" aria-label="Fechar editor">×</button>
+      </header>
+
+      <div class="pd-admin-drawer-body">
+        <form id="pd-admin-form">
+          <div id="pd-admin-fields"></div>
+        </form>
+      </div>
+
+      <footer class="pd-admin-drawer-footer">
+        <button class="pd-admin-button primary" type="button" id="pd-admin-apply">Aplicar prévia</button>
+        <button class="pd-admin-button" type="button" id="pd-admin-save-drawer">Salvar rascunho</button>
+        <button class="pd-admin-button" type="button" id="pd-admin-close-footer">Fechar</button>
+      </footer>
+    </aside>
+
+    <div class="pd-admin-toast" id="pd-admin-toast" data-pd-admin hidden></div>
+
+    <div class="pd-quick-edit-modal" id="pd-quick-edit-modal" data-pd-admin hidden aria-hidden="true">
+      <div class="pd-quick-edit-card" role="dialog" aria-modal="true" aria-labelledby="pd-quick-edit-title">
+        <header class="pd-quick-edit-header">
+          <div>
+            <h2 id="pd-quick-edit-title">Edição rápida</h2>
+            <p class="pd-quick-edit-path" id="pd-quick-edit-path"></p>
+          </div>
+          <button class="pd-admin-close" type="button" id="pd-quick-edit-close" aria-label="Fechar edição rápida">×</button>
+        </header>
+
+        <div class="pd-quick-edit-tabs" role="tablist" aria-label="Tipo de edição">
+          <button class="pd-quick-edit-tab is-active" type="button" data-quick-tab="content">Conteúdo</button>
+          <button class="pd-quick-edit-tab" type="button" data-quick-tab="style">Estilo</button>
+        </div>
+
+        <div class="pd-quick-edit-pane" id="pd-quick-edit-content">
+          <div class="pd-quick-edit-fields" id="pd-quick-edit-content-fields"></div>
+        </div>
+
+        <div class="pd-quick-edit-pane" id="pd-quick-edit-style" hidden>
+          <div class="pd-quick-edit-fields">
+            <label class="pd-admin-label">
+              <span>Dispositivo</span>
+              <select id="pd-style-device">
+                <option value="desktop">Desktop</option>
+                <option value="tablet">Tablet</option>
+                <option value="mobile">Mobile</option>
+              </select>
+            </label>
+            <div class="pd-admin-grid">
+              <label class="pd-admin-label">
+                <span>Tamanho da fonte</span>
+                <input type="text" id="pd-style-font-size" placeholder="ex: clamp(2rem, 5vw, 4rem)" />
+              </label>
+              <label class="pd-admin-label">
+                <span>Peso da fonte</span>
+                <input type="text" id="pd-style-font-weight" placeholder="ex: 800" />
+              </label>
+              <label class="pd-admin-label">
+                <span>Line-height</span>
+                <input type="text" id="pd-style-line-height" placeholder="ex: 1.2" />
+              </label>
+              <label class="pd-admin-label">
+                <span>Letter-spacing</span>
+                <input type="text" id="pd-style-letter-spacing" placeholder="ex: 0.02em" />
+              </label>
+              <label class="pd-admin-label">
+                <span>Alinhamento</span>
+                <select id="pd-style-text-align">
+                  <option value="">Padrão</option>
+                  <option value="left">Esquerda</option>
+                  <option value="center">Centro</option>
+                  <option value="right">Direita</option>
+                </select>
+              </label>
+              <label class="pd-admin-label">
+                <span>Cor</span>
+                <input type="text" id="pd-style-color" placeholder="ex: #2dff12 ou var(--pd-lime)" />
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <footer class="pd-quick-edit-actions">
+          <button class="pd-admin-button" type="button" id="pd-quick-edit-cancel">Cancelar</button>
+          <button class="pd-admin-button primary" type="button" id="pd-quick-edit-apply">Aplicar</button>
+        </footer>
+      </div>
+    </div>
+
+    <script data-pd-elementor="true">
+      /* ==========================================================
+         PIXEL DEMAND — TEMPLATE CONFIGURÁVEL DE PROPOSTA
+         Edite SOMENTE este objeto para trocar cliente, textos,
+         valores, imagens, cores, WhatsApp, escopo e seções.
+
+         IMPORTANTE:
+         Os caminhos de imagem abaixo foram preservados exatamente
+         como estavam no arquivo original.
+      ========================================================== */
+
+      const PD_EMBEDDED_ELEMENTOR = document.currentScript?.dataset?.pdElementor === "true";
+      const PD_SCRIPT_SOURCE = document.currentScript?.textContent || "";
+
+      let PROPOSTA = {
+        theme: {
+          accent: "#2dff12",
+          bg: "#050505",
+          graphite: "#111010",
+          panel: "#1b181a",
+          panel2: "#211f20",
+          text: "#f8f8f4",
+          muted: "#bdb7b7"
+        },
+
+        visual: {
+          heroEyebrow: {
+            desktop: { fontSize: "", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" },
+            tablet: { fontSize: "", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" },
+            mobile: { fontSize: "", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
+          },
+          heroTitle: {
+            desktop: { fontSize: "", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" },
+            tablet: { fontSize: "", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" },
+            mobile: { fontSize: "", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
+          },
+          heroHighlight: {
+            desktop: { fontSize: "", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" },
+            tablet: { fontSize: "", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" },
+            mobile: { fontSize: "", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
+          },
+          heroLead: {
+            desktop: { fontSize: "", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" },
+            tablet: { fontSize: "", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" },
+            mobile: { fontSize: "", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
+          },
+          investmentTitle: {
+            desktop: { fontSize: "", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" },
+            tablet: { fontSize: "", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" },
+            mobile: { fontSize: "", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
+          },
+          investmentPrice: {
+            desktop: { fontSize: "", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" },
+            tablet: { fontSize: "", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" },
+            mobile: { fontSize: "", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
+          },
+          approvalTitle: {
+            desktop: { fontSize: "", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" },
+            tablet: { fontSize: "", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" },
+            mobile: { fontSize: "", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
+          }
+        },
+
+        brand: {
+          agencyName: "Pixel Demand",
+          wordmarkAlt: "Pixel Demand",
+          icon: "imagens identidade visual pixel demand/icone pixel demand.png",
+          wordmark: "imagens identidade visual pixel demand/PIXEL DEMAND - KV 2026-18.png",
+          showcaseLogo: "imagens identidade visual pixel demand/PIXEL DEMAND - KV 2026-17.png",
+          identityLogo: "imagens identidade visual pixel demand/PIXEL DEMAND - KV 2026-18.png",
+          identityArt: "imagens identidade visual pixel demand/PROPOSTA INVESTIMENTO - pixel demand-01.png"
+        },
+
+        wordpressMedia: {
+          // Elementor/WordPress: mude enabled para true e cole aqui as URLs absolutas da biblioteca de mídia.
+          // Se algum campo ficar vazio, o template usa automaticamente o caminho local antigo em brand/gallery.
+          enabled: false,
+          icon: "",
+          wordmark: "",
+          showcaseLogo: "",
+          identityLogo: "",
+          identityArt: "",
+          gallery: [
+            "",
+            "",
+            ""
+          ]
+        },
+
+        client: {
+          name: "Brooklyn Academia",
+          slug: "brooklyn-academia",
+          proposalName: "Proposta de investimento",
+          validity: "7 dias",
+          date: "Maio de 2026"
+        },
+
+        contact: {
+          whatsappNumber: "5500000000000",
+          whatsappApproveText: "Quero aprovar a proposta da Pixel Demand para Brooklyn Academia",
+          whatsappQuestionText: "Quero tirar uma dúvida sobre a proposta da Pixel Demand para Brooklyn Academia"
+        },
+
+        sections: {
+          intro: true,
+          diagnosis: true,
+          services: true,
+          gallery: false,
+          packages: true,
+          details: true,
+          timeline: true,
+          scope: true,
+          investment: true,
+          conditions: true,
+          approval: true
+        },
+
+        behavior: {
+          closeOtherAccordions: false,
+          enableScrollReveal: true,
+          enablePackageSelection: true
+        },
+
+        nav: [
+          { label: "Serviços", target: "servicos", section: "services" },
+          { label: "Pacotes", target: "pacotes", section: "packages" },
+          { label: "Investimento", target: "investimento", section: "investment" },
+          { label: "Aprovar", target: "aprovar", section: "approval" }
+        ],
+
+        hero: {
+          eyebrow: "Proposta comercial personalizada",
+          title: "Proposta de investimento",
+          highlight: "Brooklyn Academia",
+          lead: "Uma experiência interativa para apresentar diagnóstico, serviços, escopo, cronograma e investimento com clareza premium, visual forte e aprovação simples.",
+          primaryButton: "Ver investimento",
+          secondaryButton: "Falar no WhatsApp"
+        },
+
+        summary: {
+          metricValue: "7 dias",
+          metricLabel: "Validade comercial para aprovação desta proposta.",
+          title: "Reposicionar a presença digital com consistência visual e foco comercial.",
+          text: "Esta proposta organiza a narrativa, o escopo, os investimentos e os próximos passos em uma experiência digital direta, moderna e fácil de aprovar."
+        },
+
+        intro: {
+          kicker: "Introdução",
+          title: "Visão do projeto",
+          description: "Resumo direto do que esta proposta resolve e de como a Pixel Demand conduz a entrega.",
+          text: "A Brooklyn Academia tem uma oportunidade direta de fortalecer percepção de valor, organizar melhor sua comunicação e transformar seus canais digitais em uma vitrine mais consistente para captação de alunos."
+        },
+
+        diagnosis: {
+          kicker: "Diagnóstico",
+          title: "Contexto",
+          description: "Pontos de atenção identificados antes da construção da solução.",
+          items: [
+            "O Instagram ainda não comunica todo o potencial da marca, principalmente em relação à energia, estrutura e experiência oferecida.",
+            "Existe uma oportunidade de padronizar posts, stories e materiais comerciais para reforçar identidade e reconhecimento.",
+            "O conteúdo pode apresentar melhor diferenciais, ambiente, acompanhamento, treinos, resultados e prova social.",
+            "Uma linha visual mais consistente pode facilitar desejo, autoridade e conversão de novos alunos."
+          ]
+        },
+
+        services: {
+          kicker: "Serviços",
+          title: "Incluídos",
+          description: "Entregas principais organizadas para aumentar clareza, consistência e conversão.",
+          items: [
+            {
+              title: "Direção visual",
+              text: "Sistema de comunicação com linguagem, ritmo, composição e padrão visual para campanhas e rotina."
+            },
+            {
+              title: "Social media",
+              text: "Planejamento de conteúdo e criativos para feed, stories e anúncios com foco em clareza e desejo."
+            },
+            {
+              title: "Materiais comerciais",
+              text: "Peças de apoio para ofertas, lançamentos, campanhas sazonais e comunicação de planos."
+            },
+            {
+              title: "Landing page",
+              text: "Página objetiva para apresentação, benefícios, oferta e contato com foco em conversão."
+            },
+            {
+              title: "Motion e vídeo",
+              text: "Cortes, animações e recursos visuais para aumentar retenção e percepção profissional."
+            },
+            {
+              title: "Gestão de projeto",
+              text: "Organização de entregas, alinhamentos, prioridades e acompanhamento durante o projeto."
+            }
+          ]
+        },
+
+        gallery: {
+          kicker: "Visual",
+          title: "Referências",
+          description: "Bloco opcional para imagens, mockups, prints, identidade visual, referências ou prévias do projeto.",
+          introTitle: "Material visual configurável",
+          introText: "Ative esta seção quando quiser apresentar imagens de apoio sem deixar cards soltos no meio da proposta.",
+          images: [
+            {
+              src: "imagens identidade visual pixel demand/PIXEL DEMAND - KV 2026-03.png",
+              alt: "Referência visual Pixel Demand",
+              caption: "Direção visual"
+            },
+            {
+              src: "imagens identidade visual pixel demand/PIXEL DEMAND - KV 2026-05.png",
+              alt: "Referência visual Pixel Demand",
+              caption: "Aplicação de marca"
+            },
+            {
+              src: "imagens identidade visual pixel demand/PIXEL DEMAND - KV 2026-14.png",
+              alt: "Referência visual Pixel Demand",
+              caption: "Sistema gráfico"
+            }
+          ]
+        },
+
+        packages: {
+          kicker: "Opções",
+          title: "Pacotes",
+          description: "Caminhos comerciais possíveis para adequar profundidade, ritmo e investimento.",
+          items: [
+            {
+              name: "Essencial",
+              price: "R$ 4.800",
+              description: "Base visual, conteúdos prioritários e organização inicial para gerar consistência rapidamente.",
+              tag: "Entrada",
+              recommended: false,
+              investmentNote: "Pacote Essencial, com condição de pagamento em 50% na aprovação e 50% na entrega final."
+            },
+            {
+              name: "Performance",
+              price: "R$ 8.000",
+              description: "Direção completa, social, landing page e materiais comerciais para captação com mais estrutura.",
+              tag: "Recomendado",
+              recommended: true,
+              investmentNote: "Pacote Performance, com condição de pagamento em 50% na aprovação e 50% na entrega final."
+            },
+            {
+              name: "Premium",
+              price: "R$ 12.500",
+              description: "Escopo ampliado com motion, campanhas, páginas extras e acompanhamento mais próximo.",
+              tag: "Completo",
+              recommended: false,
+              investmentNote: "Pacote Premium, com condição de pagamento em 50% na aprovação e 50% na entrega final."
+            }
+          ]
+        },
+
+        details: {
+          kicker: "Detalhes",
+          title: "Entregas",
+          description: "Cada bloco pode ser aberto para visualizar o escopo de forma objetiva.",
+          items: [
+            {
+              title: "Identidade aplicada e direção criativa",
+              open: true,
+              text: "Organização da linguagem visual para manter consistência em todos os pontos de contato.",
+              bullets: [
+                "Guia visual aplicado para redes e campanhas.",
+                "Paleta, uso tipográfico, composições e hierarquia.",
+                "Modelos base para comunicação recorrente."
+              ]
+            },
+            {
+              title: "Conteúdos e materiais digitais",
+              open: false,
+              text: "Criativos pensados para comunicar valor, diferenciais e ofertas de forma mais comercial.",
+              bullets: [
+                "Posts estáticos e carrosséis.",
+                "Stories de campanha e relacionamento.",
+                "Peças comerciais para planos, aulas e chamadas."
+              ]
+            },
+            {
+              title: "Página de conversão",
+              open: false,
+              text: "Landing page responsiva para apresentar a academia e conduzir o interessado ao contato.",
+              bullets: [
+                "Hero com oferta principal.",
+                "Blocos de benefícios, estrutura e prova social.",
+                "CTA para WhatsApp e captura de interesse."
+              ]
+            }
+          ]
+        },
+
+        timeline: {
+          kicker: "Etapas",
+          title: "Cronograma",
+          description: "Cadência simples para sair de alinhamento, passar por produção e chegar na entrega final.",
+          items: [
+            {
+              period: "Semana 01",
+              title: "Imersão e alinhamento",
+              text: "Coleta de referências, objetivos, ofertas, materiais existentes e definição das prioridades."
+            },
+            {
+              period: "Semana 02",
+              title: "Direção visual e primeiras peças",
+              text: "Criação do sistema visual aplicado, aprovações iniciais e ajuste de linguagem."
+            },
+            {
+              period: "Semana 03",
+              title: "Produção das entregas",
+              text: "Desenvolvimento dos materiais, página e criativos conforme pacote escolhido."
+            },
+            {
+              period: "Semana 04",
+              title: "Revisão e entrega final",
+              text: "Refinamentos finais, fechamento dos arquivos e orientação de uso dos materiais."
+            }
+          ]
+        },
+
+        scope: {
+          kicker: "Escopo",
+          title: "Limites",
+          description: "Bloco importante para proteger o projeto e evitar desalinhamento depois da aprovação.",
+          includedTitle: "Incluso nesta proposta",
+          excludedTitle: "Não incluso nesta proposta",
+          included: [
+            "Planejamento e direção visual das entregas descritas.",
+            "Criação dos materiais previstos no pacote aprovado.",
+            "Ajustes de refinamento dentro do escopo combinado.",
+            "Orientação de uso e organização final dos arquivos."
+          ],
+          excluded: [
+            "Gestão de tráfego pago ou verba de mídia.",
+            "Captações presenciais extras não previstas no escopo.",
+            "Demandas urgentes fora do cronograma combinado.",
+            "Novas páginas, peças ou campanhas não listadas na proposta."
+          ]
+        },
+
+        investment: {
+          title: "Investimento recomendado",
+          packageName: "Performance",
+          price: "R$ 8.000",
+          note: "Pacote Performance, com condição de pagamento em 50% na aprovação e 50% na entrega final."
+        },
+
+        conditions: {
+          kicker: "Comercial",
+          title: "Condições",
+          description: "Regras essenciais para início, pagamento e validade da proposta.",
+          items: [
+            {
+              title: "Início",
+              text: "O projeto inicia após aprovação formal e pagamento da primeira parcela."
+            },
+            {
+              title: "Pagamento",
+              text: "50% na aprovação e 50% na entrega. Outras condições podem ser alinhadas antes do aceite."
+            },
+            {
+              title: "Validade",
+              text: "Valores e escopo válidos por 7 dias a partir do envio desta proposta."
+            }
+          ]
+        },
+
+        approval: {
+          kicker: "Aprovação",
+          title: "Pronto para aprovar?",
+          text: "Ao aprovar, alinhamos os próximos passos, materiais necessários e data de início do projeto.",
+          button: "Aprovar no WhatsApp"
+        },
+
+        footer: {
+          left: "Pixel Demand — proposta comercial personalizada.",
+          right: "Página não indexável. Link criado para análise direta do cliente."
+        }
+      };
+
+      const PD_STORAGE_KEY = "pixeldemand-proposta-admin-draft-v1";
+      const PD_ADMIN_EXPORT_LOCK = false;
+      const PD_DEFAULT_PROPOSTA = JSON.parse(JSON.stringify(PROPOSTA));
+      let pdAdminMode = false;
+      let pdQuickEdit = null;
+
+      const $ = (selector, context = document) => context.querySelector(selector);
+      const $$ = (selector, context = document) => Array.from(context.querySelectorAll(selector));
+
+      function escapeHTML(value) {
+        return String(value ?? "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function attr(value) {
+        return escapeHTML(value);
+      }
+
+      const PD_STYLE_PROPS = {
+        fontSize: "font-size",
+        fontWeight: "font-weight",
+        lineHeight: "line-height",
+        letterSpacing: "letter-spacing",
+        textAlign: "text-align",
+        color: "color"
+      };
+      const PD_VISUAL_DEVICES = ["desktop", "tablet", "mobile"];
+
+      function styleKeyFromPath(path) {
+        return String(path || "")
+          .replace(/\.(\d+)/g, "_$1")
+          .replace(/[^a-zA-Z0-9]+([a-zA-Z0-9])/g, (_, char) => char.toUpperCase())
+          .replace(/^[A-Z]/, (char) => char.toLowerCase());
+      }
+
+      function emptyVisualStyle() {
+        return Object.keys(PD_STYLE_PROPS).reduce((style, key) => {
+          style[key] = "";
+          return style;
+        }, {});
+      }
+
+      function normalizeVisualStyleEntry(entry = {}) {
+        const normalized = {
+          desktop: emptyVisualStyle(),
+          tablet: emptyVisualStyle(),
+          mobile: emptyVisualStyle()
+        };
+
+        if (!isPlainObject(entry)) return normalized;
+
+        PD_VISUAL_DEVICES.forEach((device) => {
+          if (!isPlainObject(entry[device])) return;
+          Object.keys(PD_STYLE_PROPS).forEach((key) => {
+            normalized[device][key] = String(entry[device][key] || "").trim();
+          });
+        });
+
+        Object.keys(PD_STYLE_PROPS).forEach((key) => {
+          const legacyValue = String(entry[key] || "").trim();
+          if (legacyValue && !normalized.desktop[key]) {
+            normalized.desktop[key] = legacyValue;
+          }
+        });
+
+        return normalized;
+      }
+
+      function migrateVisualStyles() {
+        PROPOSTA.visual ||= {};
+        Object.keys(PROPOSTA.visual).forEach((styleKey) => {
+          PROPOSTA.visual[styleKey] = normalizeVisualStyleEntry(PROPOSTA.visual[styleKey]);
+        });
+      }
+
+      function safeCssValue(value) {
+        return String(value || "").replace(/[{};]/g, "").trim();
+      }
+
+      function visualStyleText(styleKey, device = "desktop", source = PROPOSTA.visual) {
+        const entry = normalizeVisualStyleEntry(source?.[styleKey] || {});
+        const style = entry[device] || {};
+        return Object.entries(PD_STYLE_PROPS)
+          .map(([key, cssProp]) => {
+            const value = safeCssValue(style[key]);
+            return value ? `${cssProp}: ${value}` : "";
+          })
+          .filter(Boolean)
+          .join("; ");
+      }
+
+      function cssAttributeValue(value) {
+        return String(value || "").replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+      }
+
+      function renderVisualStyles() {
+        migrateVisualStyles();
+        const visual = PROPOSTA.visual || {};
+        const rules = [];
+
+        Object.keys(visual).forEach((styleKey) => {
+          const selector = `.pd-proposal [data-pd-style="${cssAttributeValue(styleKey)}"]`;
+          const desktop = visualStyleText(styleKey, "desktop", visual);
+          const tablet = visualStyleText(styleKey, "tablet", visual);
+          const mobile = visualStyleText(styleKey, "mobile", visual);
+
+          if (desktop) rules.push(`@media (min-width: 981px) {\n  ${selector} { ${desktop}; }\n}`);
+          if (tablet) rules.push(`@media (min-width: 641px) and (max-width: 980px) {\n  ${selector} { ${tablet}; }\n}`);
+          if (mobile) rules.push(`@media (max-width: 640px) {\n  ${selector} { ${mobile}; }\n}`);
+        });
+
+        let styleTag = document.getElementById("pd-dynamic-visual-styles");
+        if (!styleTag) {
+          styleTag = document.createElement("style");
+          styleTag.id = "pd-dynamic-visual-styles";
+          (document.head || document.body || document.documentElement).appendChild(styleTag);
+        }
+        styleTag.textContent = rules.join("\n\n");
+      }
+
+      function styleAttrs(styleKey) {
+        if (!styleKey) return "";
+        return ` data-pd-style="${attr(styleKey)}"`;
+      }
+
+      function editAttrs(type, path, styleKey = "") {
+        const resolvedStyleKey = styleKey || styleKeyFromPath(path);
+        const style = styleAttrs(resolvedStyleKey);
+        if (PD_ADMIN_EXPORT_LOCK) return style;
+        return ` data-pd-edit="${attr(type)}" data-pd-path="${attr(path)}"${style}`;
+      }
+
+      function isAbsoluteMediaUrl(value) {
+        return /^https?:\/\//i.test(String(value || "").trim());
+      }
+
+      function resolveMedia(key, fallback, index = null) {
+        const media = PROPOSTA.wordpressMedia || {};
+        if (media.enabled === true) {
+          const value = key === "gallery" ? media.gallery?.[index] : media[key];
+          if (isAbsoluteMediaUrl(value)) return String(value).trim();
+        }
+        return fallback;
+      }
+
+      function handleImageError(image) {
+        if (!image || image.dataset.fallbackApplied === "true") return;
+        image.dataset.fallbackApplied = "true";
+        image.style.display = "none";
+
+        const holder = image.closest("figure,.pd-brand-showcase,.pd-identity-art,.pd-gallery-card,.pd-brand,.pd-quick-edit-preview");
+        if (!holder) return;
+
+        holder.classList.add("pd-image-holder-broken");
+        if (!holder.querySelector(".pd-image-fallback")) {
+          const label = image.alt || "Imagem indisponível";
+          holder.insertAdjacentHTML("beforeend", `<span class="pd-image-fallback">${escapeHTML(label)}</span>`);
+        }
+      }
+
+      function whatsappLink(text) {
+        const number = String(PROPOSTA.contact.whatsappNumber || "").replace(/\D/g, "");
+        return `https://wa.me/${number}?text=${encodeURIComponent(text || "")}`;
+      }
+
+      function indexLabel(index) {
+        return String(index + 1).padStart(2, "0");
+      }
+
+      function list(items, path = "") {
+        if (!items || !items.length) return "";
+        return `<ul class="pd-list">${items.map((item, index) => {
+          const itemPath = path ? `${path}.${index}` : "";
+          return `<li${itemPath ? editAttrs("textarea", itemPath) : ""}>${escapeHTML(item)}</li>`;
+        }).join("")}</ul>`;
+      }
+
+      function heading({ kicker, title, description }, basePath = "") {
+        return `
+          <div class="pd-section-heading pd-reveal">
+            ${kicker ? `<div class="pd-kicker"${basePath ? editAttrs("text", `${basePath}.kicker`) : ""}>${escapeHTML(kicker)}</div>` : ""}
+            ${title ? `<h2${basePath ? editAttrs("text", `${basePath}.title`) : ""}>${escapeHTML(title)}</h2>` : ""}
+            ${description ? `<p${basePath ? editAttrs("textarea", `${basePath}.description`) : ""}>${escapeHTML(description)}</p>` : ""}
+          </div>
+        `;
+      }
+
+      function imgTag({ src, alt = "", className = "", loading = "lazy", editPath = "" }) {
+        if (!src) return "";
+        return `<img${className ? ` class="${attr(className)}"` : ""}${editPath ? editAttrs("image", editPath) : ""} src="${attr(src)}" alt="${attr(alt)}" loading="${attr(loading)}" decoding="async" onerror="handleImageError(this)" />`;
+      }
+
+      function section(id, config, content, extraClass = "") {
+        const pathMap = {
+          introducao: "intro",
+          diagnostico: "diagnosis",
+          servicos: "services",
+          visual: "gallery",
+          pacotes: "packages",
+          detalhes: "details",
+          cronograma: "timeline",
+          escopo: "scope",
+          condicoes: "conditions"
+        };
+        const basePath = pathMap[id] || "";
+        return `
+          <section class="pd-section ${extraClass}" id="${attr(id)}">
+            ${heading(config, basePath)}
+            <div class="pd-reveal">${content}</div>
+          </section>
+        `;
+      }
+
+      function renderHero() {
+        const { hero, summary, brand, client } = PROPOSTA;
+        const showcaseLogo = resolveMedia("showcaseLogo", brand.showcaseLogo);
+        const icon = resolveMedia("icon", brand.icon);
+        return `
+          <section class="pd-hero" aria-label="Proposta para ${attr(client.name)}">
+            <div class="pd-hero-copy pd-reveal">
+              <div class="pd-eyebrow"${editAttrs("text", "hero.eyebrow", "heroEyebrow")}>${escapeHTML(hero.eyebrow)}</div>
+              <h1${editAttrs("text", "hero.title", "heroTitle")}>${escapeHTML(hero.title)} <span${editAttrs("text", "hero.highlight", "heroHighlight")}>${escapeHTML(hero.highlight || client.name)}</span></h1>
+              <p class="pd-lead"${editAttrs("textarea", "hero.lead", "heroLead")}>${escapeHTML(hero.lead)}</p>
+              <div class="pd-actions">
+                <a class="pd-button primary" href="#investimento">${escapeHTML(hero.primaryButton)}</a>
+                <a class="pd-button" href="${attr(whatsappLink(PROPOSTA.contact.whatsappQuestionText))}" target="_blank" rel="noreferrer">${escapeHTML(hero.secondaryButton)}</a>
+              </div>
+            </div>
+
+            <aside class="pd-hero-side pd-reveal" aria-label="Resumo da proposta">
+              <div class="pd-brand-showcase" aria-label="Identidade visual Pixel Demand">
+                ${imgTag({ src: showcaseLogo, alt: brand.wordmarkAlt, className: "pd-showcase-logo", loading: "eager", editPath: "brand.showcaseLogo" })}
+                ${imgTag({ src: icon, alt: "", className: "pd-showcase-star", loading: "eager", editPath: "brand.icon" })}
+              </div>
+              <div class="pd-metric">
+                <strong${editAttrs("text", "summary.metricValue")}>${escapeHTML(summary.metricValue || client.validity)}</strong>
+                <span${editAttrs("textarea", "summary.metricLabel")}>${escapeHTML(summary.metricLabel)}</span>
+              </div>
+              <div class="pd-side-note">
+                <h2${editAttrs("textarea", "summary.title")}>${escapeHTML(summary.title)}</h2>
+                <p${editAttrs("textarea", "summary.text")}>${escapeHTML(summary.text)}</p>
+              </div>
+            </aside>
+          </section>
+        `;
+      }
+
+      function renderIntro() {
+        const { intro, brand } = PROPOSTA;
+        const identityLogo = resolveMedia("identityLogo", brand.identityLogo);
+        const identityArt = resolveMedia("identityArt", brand.identityArt);
+        return section("introducao", intro, `
+          <div class="pd-panel pd-identity-panel">
+            <div class="pd-identity-copy">
+              <p class="pd-intro-text"${editAttrs("textarea", "intro.text")}>${escapeHTML(intro.text)}</p>
+              ${imgTag({ src: identityLogo, alt: brand.wordmarkAlt, className: "pd-identity-logo", editPath: "brand.identityLogo" })}
+            </div>
+            <figure class="pd-identity-art" aria-label="Referência visual oficial da Pixel Demand"${editAttrs("image", "brand.identityArt")}>
+              ${imgTag({ src: identityArt, alt: "" })}
+            </figure>
+          </div>
+        `);
+      }
+
+      function renderDiagnosis() {
+        const diagnosis = PROPOSTA.diagnosis;
+        return section("diagnostico", diagnosis, `<div class="pd-panel">${list(diagnosis.items, "diagnosis.items")}</div>`);
+      }
+
+      function renderServices() {
+        const services = PROPOSTA.services;
+        const cards = services.items.map((item, index) => `
+          <article class="pd-card">
+            <span class="pd-index">${indexLabel(index)}</span>
+            <h3${editAttrs("text", `services.items.${index}.title`)}>${escapeHTML(item.title)}</h3>
+            <p${editAttrs("textarea", `services.items.${index}.text`)}>${escapeHTML(item.text)}</p>
+          </article>
+        `).join("");
+
+        return section("servicos", services, `<div class="pd-grid-3">${cards}</div>`);
+      }
+
+      function renderGallery() {
+        const gallery = PROPOSTA.gallery;
+        const images = gallery.images.map((image, index) => `
+          <figure class="pd-gallery-card"${editAttrs("image", `gallery.images.${index}.src`)}>
+            ${imgTag({ src: resolveMedia("gallery", image.src, index), alt: image.alt || image.caption })}
+            ${image.caption ? `<figcaption${editAttrs("text", `gallery.images.${index}.caption`)}>${escapeHTML(image.caption)}</figcaption>` : ""}
+          </figure>
+        `).join("");
+
+        return section("visual", gallery, `
+          <div class="pd-gallery">
+            <div class="pd-gallery-intro">
+              <div class="pd-kicker"${editAttrs("text", "gallery.kicker")}>${escapeHTML(gallery.kicker)}</div>
+              <h3${editAttrs("text", "gallery.introTitle")}>${escapeHTML(gallery.introTitle)}</h3>
+              <p${editAttrs("textarea", "gallery.introText")}>${escapeHTML(gallery.introText)}</p>
+            </div>
+            <div class="pd-gallery-grid">${images}</div>
+          </div>
+        `);
+      }
+
+      function recommendedPackageIndex() {
+        const packages = PROPOSTA.packages.items || [];
+        const byRecommendation = packages.findIndex((item) => item.recommended);
+        return byRecommendation >= 0 ? byRecommendation : 0;
+      }
+
+      function renderPackages() {
+        const packages = PROPOSTA.packages;
+        const cards = packages.items.map((item, index) => `
+          <article class="pd-card pd-package-card ${item.recommended ? "pd-featured is-active" : ""}" data-package-index="${index}" data-package-price="${attr(item.price)}" data-package-note="${attr(item.investmentNote || item.description)}">
+            ${item.tag ? `<span class="pd-tag">${escapeHTML(item.tag)}</span><br />` : ""}
+            <span class="pd-index">${indexLabel(index)}</span>
+            <h3${editAttrs("text", `packages.items.${index}.name`)}>${escapeHTML(item.name)}</h3>
+            <p${editAttrs("textarea", `packages.items.${index}.description`)}>${escapeHTML(item.description)}</p>
+            <strong class="pd-price"${editAttrs("text", `packages.items.${index}.price`)}>${escapeHTML(item.price)}</strong>
+            ${PROPOSTA.behavior.enablePackageSelection ? `
+              <div class="pd-card-actions">
+                <button class="pd-button small pd-select-package" type="button" data-package-index="${index}">
+                  Ver este investimento
+                </button>
+              </div>
+            ` : ""}
+          </article>
+        `).join("");
+
+        return section("pacotes", packages, `<div class="pd-grid-3">${cards}</div>`);
+      }
+
+      function renderDetails() {
+        const details = PROPOSTA.details;
+        const items = details.items.map((item, index) => `
+          <article class="pd-accordion-item ${item.open ? "open" : ""}">
+            <button class="pd-accordion-trigger" type="button" aria-expanded="${item.open ? "true" : "false"}">
+              <strong${editAttrs("text", `details.items.${index}.title`)}>${escapeHTML(item.title)}</strong>
+              <span aria-hidden="true">+</span>
+            </button>
+            <div class="pd-accordion-panel">
+              <div class="pd-accordion-content"${editAttrs("textarea", `details.items.${index}.text`)}>
+                ${escapeHTML(item.text)}
+                ${list(item.bullets, `details.items.${index}.bullets`)}
+              </div>
+            </div>
+          </article>
+        `).join("");
+
+        return section("detalhes", details, `<div class="pd-accordion">${items}</div>`);
+      }
+
+      function renderTimeline() {
+        const timeline = PROPOSTA.timeline;
+        const items = timeline.items.map((item, index) => `
+          <article class="pd-timeline-item">
+            <time${editAttrs("text", `timeline.items.${index}.period`)}>${escapeHTML(item.period)}</time>
+            <div>
+              <h3${editAttrs("text", `timeline.items.${index}.title`)}>${escapeHTML(item.title)}</h3>
+              <p${editAttrs("textarea", `timeline.items.${index}.text`)}>${escapeHTML(item.text)}</p>
+            </div>
+          </article>
+        `).join("");
+
+        return section("cronograma", timeline, `<div class="pd-timeline">${items}</div>`);
+      }
+
+      function renderScope() {
+        const scope = PROPOSTA.scope;
+        return section("escopo", scope, `
+          <div class="pd-scope-grid">
+            <div class="pd-scope-box">
+              <h3${editAttrs("text", "scope.includedTitle")}>${escapeHTML(scope.includedTitle)}</h3>
+              ${list(scope.included, "scope.included")}
+            </div>
+            <div class="pd-scope-box">
+              <h3${editAttrs("text", "scope.excludedTitle")}>${escapeHTML(scope.excludedTitle)}</h3>
+              ${list(scope.excluded, "scope.excluded")}
+            </div>
+          </div>
+        `);
+      }
+
+      function renderInvestment() {
+        const inv = PROPOSTA.investment;
+        return `
+          <section class="pd-investment pd-reveal" id="investimento"${editAttrs("color", "theme.accent")}>
+            <h2${editAttrs("text", "investment.title", "investmentTitle")}>${escapeHTML(inv.title)}</h2>
+            <div class="pd-investment-summary">
+              <strong id="pd-investment-price"${editAttrs("text", "investment.price", "investmentPrice")}>${escapeHTML(inv.price)}</strong>
+              <span id="pd-investment-note"${editAttrs("textarea", "investment.note")}>${escapeHTML(inv.note)}</span>
+            </div>
+          </section>
+        `;
+      }
+
+      function renderConditions() {
+        const conditions = PROPOSTA.conditions;
+        const cards = conditions.items.map((item, index) => `
+          <article class="pd-condition">
+            <span class="pd-index">${indexLabel(index)}</span>
+            <h3${editAttrs("text", `conditions.items.${index}.title`)}>${escapeHTML(item.title)}</h3>
+            <p${editAttrs("textarea", `conditions.items.${index}.text`)}>${escapeHTML(item.text)}</p>
+          </article>
+        `).join("");
+
+        return section("condicoes", conditions, `<div class="pd-grid-3">${cards}</div>`);
+      }
+
+      function renderApproval() {
+        const approval = PROPOSTA.approval;
+        return `
+          <section class="pd-final-cta pd-reveal" id="aprovar">
+            <div>
+              <div class="pd-kicker"${editAttrs("text", "approval.kicker")}>${escapeHTML(approval.kicker)}</div>
+              <h2${editAttrs("text", "approval.title", "approvalTitle")}>${escapeHTML(approval.title)}</h2>
+              <p${editAttrs("textarea", "approval.text")}>${escapeHTML(approval.text)}</p>
+            </div>
+            <a class="pd-button primary" id="pd-approve-link" href="${attr(whatsappLink(PROPOSTA.contact.whatsappApproveText))}" target="_blank" rel="noreferrer"${editAttrs("text", "approval.button")}>${escapeHTML(approval.button)}</a>
+          </section>
+        `;
+      }
+
+      function renderFooter() {
+        return `
+          <div class="pd-footer-note pd-reveal">
+            <span>${escapeHTML(PROPOSTA.footer.left)}</span>
+            <span>${escapeHTML(PROPOSTA.footer.right)}</span>
+          </div>
+        `;
+      }
+
+      function applyTheme() {
+        const root = document.documentElement;
+        const theme = PROPOSTA.theme;
+        const brand = PROPOSTA.brand;
+        const icon = resolveMedia("icon", brand.icon);
+        const wordmark = resolveMedia("wordmark", brand.wordmark);
+
+        [root, $("#pd-proposal-shell")].filter(Boolean).forEach((target) => {
+          target.style.setProperty("--pd-lime", theme.accent);
+          target.style.setProperty("--pd-bg", theme.bg);
+          target.style.setProperty("--pd-graphite", theme.graphite);
+          target.style.setProperty("--pd-panel", theme.panel);
+          target.style.setProperty("--pd-panel-2", theme.panel2);
+          target.style.setProperty("--pd-text", theme.text);
+          target.style.setProperty("--pd-muted", theme.muted);
+          target.style.setProperty("--pd-brand-icon-url", `url("${icon}")`);
+        });
+
+        const symbol = $("#pd-brand-symbol");
+        const wordmarkImage = $("#pd-brand-wordmark");
+        if (symbol) symbol.src = icon;
+        if (wordmarkImage) {
+          wordmarkImage.src = wordmark;
+          wordmarkImage.alt = brand.wordmarkAlt || brand.agencyName;
+        }
+
+        if (!PD_EMBEDDED_ELEMENTOR) {
+          document.title = `${brand.agencyName} | ${PROPOSTA.client.proposalName} — ${PROPOSTA.client.name}`;
+        }
+      }
+
+      function renderNav() {
+        const nav = $("#pd-nav");
+        if (!nav) return;
+
+        nav.innerHTML = PROPOSTA.nav
+          .filter((item) => !item.section || PROPOSTA.sections[item.section])
+          .map((item) => `<a href="#${attr(item.target)}">${escapeHTML(item.label)}</a>`)
+          .join("");
+      }
+
+      function renderApp() {
+        const app = $("#pd-app");
+        if (!app) return;
+
+        const sections = [
+          renderHero(),
+          PROPOSTA.sections.intro ? renderIntro() : "",
+          PROPOSTA.sections.diagnosis ? renderDiagnosis() : "",
+          PROPOSTA.sections.services ? renderServices() : "",
+          PROPOSTA.sections.gallery ? renderGallery() : "",
+          PROPOSTA.sections.packages ? renderPackages() : "",
+          PROPOSTA.sections.details ? renderDetails() : "",
+          PROPOSTA.sections.timeline ? renderTimeline() : "",
+          PROPOSTA.sections.scope ? renderScope() : "",
+          PROPOSTA.sections.investment ? renderInvestment() : "",
+          PROPOSTA.sections.conditions ? renderConditions() : "",
+          PROPOSTA.sections.approval ? renderApproval() : "",
+          renderFooter()
+        ];
+
+        app.innerHTML = sections.join("");
+      }
+
+      function syncAccordion(item) {
+        const panel = item.querySelector(".pd-accordion-panel");
+        const button = item.querySelector(".pd-accordion-trigger");
+        const isOpen = item.classList.contains("open");
+
+        if (!panel || !button) return;
+        button.setAttribute("aria-expanded", String(isOpen));
+        panel.style.maxHeight = isOpen ? panel.scrollHeight + "px" : "0px";
+      }
+
+      function setupAccordion() {
+        const accordionItems = $$(".pd-accordion-item");
+
+        accordionItems.forEach((item) => {
+          const button = item.querySelector(".pd-accordion-trigger");
+          if (!button) return;
+
+          button.addEventListener("click", () => {
+            const isOpening = !item.classList.contains("open");
+
+            if (PROPOSTA.behavior.closeOtherAccordions) {
+              accordionItems.forEach((otherItem) => {
+                if (otherItem !== item) {
+                  otherItem.classList.remove("open");
+                  syncAccordion(otherItem);
+                }
+              });
+            }
+
+            item.classList.toggle("open", isOpening);
+            syncAccordion(item);
+          });
+
+          syncAccordion(item);
+        });
+
+        window.addEventListener("resize", () => {
+          accordionItems.forEach(syncAccordion);
+        });
+      }
+
+      function updateInvestmentFromPackage(index) {
+        const packageItem = PROPOSTA.packages.items[index];
+        if (!packageItem) return;
+
+        const price = $("#pd-investment-price");
+        const note = $("#pd-investment-note");
+        const approve = $("#pd-approve-link");
+        PROPOSTA.investment.packageName = packageItem.name;
+        PROPOSTA.investment.price = packageItem.price;
+        PROPOSTA.investment.note = packageItem.investmentNote || packageItem.description;
+
+        if (price) price.textContent = packageItem.price;
+        if (note) note.textContent = packageItem.investmentNote || packageItem.description;
+
+        $$(".pd-package-card").forEach((card) => {
+          card.classList.toggle("is-active", Number(card.dataset.packageIndex) === index);
+        });
+
+        if (approve) {
+          const approvalText = `${PROPOSTA.contact.whatsappApproveText} — pacote ${packageItem.name} (${packageItem.price})`;
+          approve.href = whatsappLink(approvalText);
+        }
+      }
+
+      function setupPackages() {
+        if (!PROPOSTA.behavior.enablePackageSelection) return;
+
+        $$(".pd-select-package").forEach((button) => {
+          button.addEventListener("click", () => {
+            const index = Number(button.dataset.packageIndex);
+            updateInvestmentFromPackage(index);
+            const investment = $("#investimento");
+            if (investment) investment.scrollIntoView({ behavior: "smooth", block: "center" });
+          });
+        });
+
+        if (!pdAdminMode) {
+          updateInvestmentFromPackage(recommendedPackageIndex());
+        }
+      }
+
+      function setupReveal() {
+        const revealItems = $$(".pd-reveal");
+        if (!PROPOSTA.behavior.enableScrollReveal || !("IntersectionObserver" in window)) {
+          revealItems.forEach((item) => item.classList.add("is-visible"));
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+
+        revealItems.forEach((item) => observer.observe(item));
+      }
+
+      function deepClone(value) {
+        return JSON.parse(JSON.stringify(value));
+      }
+
+      function isPlainObject(value) {
+        return value && typeof value === "object" && !Array.isArray(value);
+      }
+
+      function mergeDeep(target, source) {
+        if (!isPlainObject(source)) return target;
+
+        Object.keys(source).forEach((key) => {
+          const sourceValue = source[key];
+          const targetValue = target[key];
+
+          if (Array.isArray(sourceValue)) {
+            target[key] = sourceValue;
+          } else if (isPlainObject(sourceValue) && isPlainObject(targetValue)) {
+            target[key] = mergeDeep({ ...targetValue }, sourceValue);
+          } else {
+            target[key] = sourceValue;
+          }
+        });
+
+        return target;
+      }
+
+      function getPath(source, path) {
+        return path.split(".").reduce((current, key) => current?.[key], source);
+      }
+
+      function setPath(source, path, value) {
+        const keys = path.split(".");
+        let target = source;
+
+        keys.slice(0, -1).forEach((key) => {
+          if (!target[key] || typeof target[key] !== "object") target[key] = {};
+          target = target[key];
+        });
+
+        target[keys[keys.length - 1]] = value;
+      }
+
+      function loadSavedDraft() {
+        if (PD_ADMIN_EXPORT_LOCK) return;
+
+        try {
+          const saved = localStorage.getItem(PD_STORAGE_KEY);
+          if (!saved) return;
+          PROPOSTA = mergeDeep(deepClone(PD_DEFAULT_PROPOSTA), JSON.parse(saved));
+        } catch {
+          localStorage.removeItem(PD_STORAGE_KEY);
+        }
+      }
+
+      function saveDraft() {
+        applyAdminFormToProposal();
+        localStorage.setItem(PD_STORAGE_KEY, JSON.stringify(PROPOSTA));
+        showAdminToast("Rascunho salvo neste navegador.");
+      }
+
+      function refreshProposal() {
+        migrateVisualStyles();
+        applyTheme();
+        renderNav();
+        renderApp();
+        renderVisualStyles();
+        setupAccordion();
+        setupPackages();
+        setupReveal();
+        updateAdminActiveClass();
+      }
+
+      function showAdminToast(message) {
+        const toast = $("#pd-admin-toast");
+        if (!toast) return;
+        toast.textContent = message;
+        toast.hidden = false;
+        clearTimeout(showAdminToast.timer);
+        showAdminToast.timer = setTimeout(() => {
+          toast.hidden = true;
+        }, 2800);
+      }
+
+      function adminField(label, path, type = "text") {
+        const value = getPath(PROPOSTA, path) ?? "";
+        return `
+          <label class="pd-admin-label">
+            <span>${escapeHTML(label)}</span>
+            <input type="${attr(type)}" data-pd-path="${attr(path)}" value="${attr(value)}" />
+          </label>
+        `;
+      }
+
+      function adminTextarea(label, path, rows = 4) {
+        const value = getPath(PROPOSTA, path) ?? "";
+        return `
+          <label class="pd-admin-label">
+            <span>${escapeHTML(label)}</span>
+            <textarea data-pd-path="${attr(path)}" rows="${attr(rows)}">${escapeHTML(value)}</textarea>
+          </label>
+        `;
+      }
+
+      function adminArrayTextarea(label, path, rows = 7) {
+        const value = getPath(PROPOSTA, path) || [];
+        return `
+          <label class="pd-admin-label">
+            <span>${escapeHTML(label)}</span>
+            <textarea data-pd-array-path="${attr(path)}" rows="${attr(rows)}">${escapeHTML(value.join("\n"))}</textarea>
+          </label>
+        `;
+      }
+
+      function adminCheckbox(label, path) {
+        const checked = getPath(PROPOSTA, path) ? "checked" : "";
+        return `
+          <label class="pd-admin-check">
+            <input type="checkbox" data-pd-path="${attr(path)}" ${checked} />
+            <span>${escapeHTML(label)}</span>
+          </label>
+        `;
+      }
+
+      function adminSection(title, content, open = false) {
+        return `
+          <details class="pd-admin-section" ${open ? "open" : ""}>
+            <summary>${escapeHTML(title)}</summary>
+            <div class="pd-admin-fields">${content}</div>
+          </details>
+        `;
+      }
+
+      function renderAdminEditor() {
+        const fields = $("#pd-admin-fields");
+        if (!fields) return;
+
+        const serviceFields = PROPOSTA.services.items.map((_, index) => `
+          <div class="pd-admin-item">
+            <p class="pd-admin-help">Serviço ${indexLabel(index)}</p>
+            ${adminField("Título", `services.items.${index}.title`)}
+            ${adminTextarea("Descrição", `services.items.${index}.text`, 3)}
+          </div>
+        `).join("");
+
+        const packageFields = PROPOSTA.packages.items.map((_, index) => `
+          <div class="pd-admin-item">
+            <p class="pd-admin-help">Pacote ${indexLabel(index)}</p>
+            ${adminField("Nome", `packages.items.${index}.name`)}
+            ${adminField("Valor", `packages.items.${index}.price`)}
+            ${adminField("Tag", `packages.items.${index}.tag`)}
+            ${adminCheckbox("Pacote recomendado", `packages.items.${index}.recommended`)}
+            ${adminTextarea("Descrição", `packages.items.${index}.description`, 3)}
+            ${adminTextarea("Nota de investimento", `packages.items.${index}.investmentNote`, 3)}
+          </div>
+        `).join("");
+
+        const detailFields = PROPOSTA.details.items.map((_, index) => `
+          <div class="pd-admin-item">
+            <p class="pd-admin-help">Accordion ${indexLabel(index)}</p>
+            ${adminField("Título", `details.items.${index}.title`)}
+            ${adminCheckbox("Aberto por padrão", `details.items.${index}.open`)}
+            ${adminTextarea("Texto", `details.items.${index}.text`, 3)}
+            ${adminArrayTextarea("Bullets (um por linha)", `details.items.${index}.bullets`, 5)}
+          </div>
+        `).join("");
+
+        const timelineFields = PROPOSTA.timeline.items.map((_, index) => `
+          <div class="pd-admin-item">
+            <p class="pd-admin-help">Etapa ${indexLabel(index)}</p>
+            ${adminField("Período", `timeline.items.${index}.period`)}
+            ${adminField("Título", `timeline.items.${index}.title`)}
+            ${adminTextarea("Descrição", `timeline.items.${index}.text`, 3)}
+          </div>
+        `).join("");
+
+        const conditionFields = PROPOSTA.conditions.items.map((_, index) => `
+          <div class="pd-admin-item">
+            <p class="pd-admin-help">Condição ${indexLabel(index)}</p>
+            ${adminField("Título", `conditions.items.${index}.title`)}
+            ${adminTextarea("Texto", `conditions.items.${index}.text`, 3)}
+          </div>
+        `).join("");
+
+        const galleryFields = PROPOSTA.gallery.images.map((_, index) => `
+          <div class="pd-admin-item">
+            <p class="pd-admin-help">Imagem visual ${indexLabel(index)}</p>
+            ${adminField("Caminho da imagem", `gallery.images.${index}.src`)}
+            ${adminField("Alt", `gallery.images.${index}.alt`)}
+            ${adminField("Legenda", `gallery.images.${index}.caption`)}
+          </div>
+        `).join("");
+
+        const wordpressGalleryFields = PROPOSTA.gallery.images.map((_, index) => `
+          <div class="pd-admin-item">
+            <p class="pd-admin-help">Galeria WordPress ${indexLabel(index)}</p>
+            ${adminField("URL absoluta", `wordpressMedia.gallery.${index}`)}
+          </div>
+        `).join("");
+
+        const sectionToggles = Object.keys(PROPOSTA.sections).map((key) =>
+          adminCheckbox(key, `sections.${key}`)
+        ).join("");
+
+        fields.innerHTML = [
+          adminSection("Dados principais", `
+            <div class="pd-admin-grid">
+              ${adminField("Nome do cliente", "client.name")}
+              ${adminField("Slug", "client.slug")}
+              ${adminField("Data", "client.date")}
+              ${adminField("Validade", "client.validity")}
+              ${adminField("WhatsApp", "contact.whatsappNumber")}
+              ${adminField("Cor principal", "theme.accent", "color")}
+            </div>
+            ${adminField("Nome da proposta", "client.proposalName")}
+            ${adminField("Título da proposta", "hero.title")}
+            ${adminField("Destaque do hero", "hero.highlight")}
+            ${adminTextarea("Texto principal", "hero.lead", 4)}
+            ${adminTextarea("Texto botão WhatsApp", "contact.whatsappQuestionText", 2)}
+            ${adminTextarea("Texto aprovação WhatsApp", "contact.whatsappApproveText", 2)}
+          `, true),
+
+          adminSection("Introdução e diagnóstico", `
+            ${adminField("Kicker introdução", "intro.kicker")}
+            ${adminField("Título introdução", "intro.title")}
+            ${adminTextarea("Descrição introdução", "intro.description", 2)}
+            ${adminTextarea("Texto de introdução", "intro.text", 5)}
+            ${adminField("Kicker diagnóstico", "diagnosis.kicker")}
+            ${adminField("Título diagnóstico", "diagnosis.title")}
+            ${adminTextarea("Descrição diagnóstico", "diagnosis.description", 2)}
+            ${adminArrayTextarea("Diagnóstico (um por linha)", "diagnosis.items", 8)}
+          `),
+
+          adminSection("Serviços", `
+            ${adminField("Kicker", "services.kicker")}
+            ${adminField("Título", "services.title")}
+            ${adminTextarea("Descrição", "services.description", 2)}
+            ${serviceFields}
+          `),
+
+          adminSection("Pacotes e valores", `
+            ${adminField("Kicker", "packages.kicker")}
+            ${adminField("Título", "packages.title")}
+            ${adminTextarea("Descrição", "packages.description", 2)}
+            ${packageFields}
+          `),
+
+          adminSection("Investimento recomendado", `
+            <div class="pd-admin-grid">
+              ${adminField("Título", "investment.title")}
+              ${adminField("Pacote", "investment.packageName")}
+              ${adminField("Valor", "investment.price")}
+              ${adminField("Validade exibida", "summary.metricValue")}
+            </div>
+            ${adminTextarea("Nota", "investment.note", 3)}
+            ${adminTextarea("Resumo lateral", "summary.title", 2)}
+            ${adminTextarea("Texto resumo lateral", "summary.text", 3)}
+            ${adminTextarea("Legenda validade", "summary.metricLabel", 2)}
+          `),
+
+          adminSection("Detalhes / accordions", `
+            ${adminField("Kicker", "details.kicker")}
+            ${adminField("Título", "details.title")}
+            ${adminTextarea("Descrição", "details.description", 2)}
+            ${detailFields}
+          `),
+
+          adminSection("Cronograma", `
+            ${adminField("Kicker", "timeline.kicker")}
+            ${adminField("Título", "timeline.title")}
+            ${adminTextarea("Descrição", "timeline.description", 2)}
+            ${timelineFields}
+          `),
+
+          adminSection("Escopo", `
+            ${adminField("Kicker", "scope.kicker")}
+            ${adminField("Título", "scope.title")}
+            ${adminTextarea("Descrição", "scope.description", 2)}
+            ${adminField("Título incluso", "scope.includedTitle")}
+            ${adminArrayTextarea("Escopo incluso (um por linha)", "scope.included", 7)}
+            ${adminField("Título não incluso", "scope.excludedTitle")}
+            ${adminArrayTextarea("Escopo não incluso (um por linha)", "scope.excluded", 7)}
+          `),
+
+          adminSection("Condições comerciais", `
+            ${adminField("Kicker", "conditions.kicker")}
+            ${adminField("Título", "conditions.title")}
+            ${adminTextarea("Descrição", "conditions.description", 2)}
+            ${conditionFields}
+          `),
+
+          adminSection("CTA final", `
+            ${adminField("Kicker", "approval.kicker")}
+            ${adminField("Título", "approval.title")}
+            ${adminTextarea("Texto", "approval.text", 3)}
+            ${adminField("Botão", "approval.button")}
+          `),
+
+          adminSection("Imagens configuráveis", `
+            <p class="pd-admin-help">Os caminhos atuais foram preservados. Edite apenas quando quiser trocar a imagem por outro arquivo existente.</p>
+            ${adminField("Ícone / estrela", "brand.icon")}
+            ${adminField("Wordmark", "brand.wordmark")}
+            ${adminField("Logo vitrine", "brand.showcaseLogo")}
+            ${adminField("Logo introdução", "brand.identityLogo")}
+            ${adminField("Arte introdução", "brand.identityArt")}
+            ${galleryFields}
+          `),
+
+          adminSection("Imagens WordPress / URLs absolutas", `
+            <p class="pd-admin-help">Cole aqui as URLs completas da biblioteca de mídia do WordPress. Quando ativado, URLs absolutas válidas substituem os caminhos locais. Campos vazios continuam usando o fallback local.</p>
+            ${adminCheckbox("Usar URLs absolutas do WordPress", "wordpressMedia.enabled")}
+            ${adminField("Ícone / símbolo", "wordpressMedia.icon")}
+            ${adminField("Wordmark", "wordpressMedia.wordmark")}
+            ${adminField("Logo vitrine", "wordpressMedia.showcaseLogo")}
+            ${adminField("Logo introdução", "wordpressMedia.identityLogo")}
+            ${adminField("Arte introdução", "wordpressMedia.identityArt")}
+            ${wordpressGalleryFields}
+          `),
+
+          adminSection("Exibir / ocultar seções", `
+            ${sectionToggles}
+            <p class="pd-admin-help">A navegação acompanha automaticamente as seções habilitadas.</p>
+          `),
+
+          adminSection("Rodapé", `
+            ${adminTextarea("Texto esquerdo", "footer.left", 2)}
+            ${adminTextarea("Texto direito", "footer.right", 2)}
+          `)
+        ].join("");
+      }
+
+      function applyAdminFormToProposal() {
+        const form = $("#pd-admin-form");
+        if (!form) return;
+
+        $$("[data-pd-path]", form).forEach((field) => {
+          const path = field.dataset.pdPath;
+          const value = field.type === "checkbox" ? field.checked : field.value;
+          setPath(PROPOSTA, path, value);
+        });
+
+        $$("[data-pd-array-path]", form).forEach((field) => {
+          const path = field.dataset.pdArrayPath;
+          const items = field.value
+            .split("\n")
+            .map((item) => item.trim())
+            .filter(Boolean);
+          setPath(PROPOSTA, path, items);
+        });
+
+        refreshProposal();
+      }
+
+      function updateAdminActiveClass() {
+        const shell = $("#pd-proposal-shell");
+        if (shell) shell.classList.toggle("pd-admin-active", pdAdminMode && !PD_ADMIN_EXPORT_LOCK);
+        document.body?.classList.toggle("pd-admin-active", pdAdminMode && !PD_ADMIN_EXPORT_LOCK);
+      }
+
+      function setQuickTab(tabName) {
+        $$(".pd-quick-edit-tab").forEach((button) => {
+          button.classList.toggle("is-active", button.dataset.quickTab === tabName);
+        });
+        $("#pd-quick-edit-content").hidden = tabName !== "content";
+        $("#pd-quick-edit-style").hidden = tabName !== "style";
+      }
+
+      function setQuickPreview(src) {
+        const preview = $("#pd-quick-edit-preview");
+        if (!preview) return;
+        const value = String(src || "").trim();
+        preview.innerHTML = value
+          ? `<img src="${attr(value)}" alt="Preview" onerror="handleImageError(this)" />`
+          : `<span class="pd-image-fallback">Sem imagem selecionada</span>`;
+      }
+
+      function quickInputMarkup(type, path, value) {
+        if (type === "image") {
+          return `
+            <label class="pd-admin-label">
+              <span>URL ou caminho da imagem</span>
+              <input type="text" id="pd-quick-edit-value" value="${attr(value)}" placeholder="assets/imagem.png ou https://..." />
+            </label>
+            <label class="pd-admin-label">
+              <span>Escolher arquivo</span>
+              <input type="file" id="pd-quick-edit-file" accept="image/*" />
+            </label>
+            <div class="pd-quick-edit-preview" id="pd-quick-edit-preview"></div>
+            <p class="pd-admin-help">Para versão final em produção, prefira usar caminho do projeto ou URL hospedada.</p>
+          `;
+        }
+
+        if (type === "textarea") {
+          return `
+            <label class="pd-admin-label">
+              <span>Texto</span>
+              <textarea id="pd-quick-edit-value" rows="7">${escapeHTML(value)}</textarea>
+            </label>
+          `;
+        }
+
+        if (type === "color") {
+          const safeColor = /^#[0-9a-f]{6}$/i.test(String(value || "")) ? value : PROPOSTA.theme.accent;
+          return `
+            <label class="pd-admin-label">
+              <span>Cor principal do tema</span>
+              <input type="color" id="pd-quick-edit-color-picker" value="${attr(safeColor)}" />
+            </label>
+            <label class="pd-admin-label">
+              <span>Valor CSS</span>
+              <input type="text" id="pd-quick-edit-value" value="${attr(value)}" placeholder="#2dff12" />
+            </label>
+            <p class="pd-admin-help">Clique em uma área livre do bloco de investimento para alterar a cor principal.</p>
+          `;
+        }
+
+        return `
+          <label class="pd-admin-label">
+            <span>Texto</span>
+            <input type="text" id="pd-quick-edit-value" value="${attr(value)}" />
+          </label>
+        `;
+      }
+
+      function currentViewportDevice() {
+        const width = window.innerWidth || 1200;
+        if (width <= 640) return "mobile";
+        if (width <= 980) return "tablet";
+        return "desktop";
+      }
+
+      function styleInputId(key) {
+        return `pd-style-${key.replace(/[A-Z]/g, (char) => `-${char.toLowerCase()}`)}`;
+      }
+
+      function fillQuickStyleFields(styleKey, device = pdQuickEdit?.device || currentViewportDevice()) {
+        const entry = pdQuickEdit?.visualDraft || normalizeVisualStyleEntry(PROPOSTA.visual?.[styleKey] || {});
+        const style = entry[device] || emptyVisualStyle();
+        const deviceSelect = $("#pd-style-device");
+        if (deviceSelect) deviceSelect.value = device;
+
+        Object.keys(PD_STYLE_PROPS).forEach((key) => {
+          const input = $(`#${styleInputId(key)}`);
+          if (input) input.value = style[key] || "";
+        });
+      }
+
+      function readQuickStyleFields(styleKey) {
+        if (!styleKey || !pdQuickEdit) return;
+        const device = pdQuickEdit.device || currentViewportDevice();
+        pdQuickEdit.visualDraft ||= normalizeVisualStyleEntry(PROPOSTA.visual?.[styleKey] || {});
+        pdQuickEdit.visualDraft[device] ||= emptyVisualStyle();
+
+        Object.keys(PD_STYLE_PROPS).forEach((key) => {
+          const input = $(`#${styleInputId(key)}`);
+          pdQuickEdit.visualDraft[device][key] = input ? input.value.trim() : "";
+        });
+      }
+
+      function openQuickEdit(element) {
+        if (!pdAdminMode || !element) return;
+        const type = element.dataset.pdEdit || "text";
+        const path = element.dataset.pdPath || "";
+        const styleKey = element.dataset.pdStyle || styleKeyFromPath(path);
+        if (!path) return;
+
+        const device = currentViewportDevice();
+        pdQuickEdit = {
+          type,
+          path,
+          styleKey,
+          device,
+          visualDraft: normalizeVisualStyleEntry(PROPOSTA.visual?.[styleKey] || {})
+        };
+        const value = getPath(PROPOSTA, path) ?? "";
+        const modal = $("#pd-quick-edit-modal");
+        const fields = $("#pd-quick-edit-content-fields");
+        const pathLabel = $("#pd-quick-edit-path");
+
+        if (pathLabel) pathLabel.textContent = path;
+        if (fields) fields.innerHTML = quickInputMarkup(type, path, value);
+        fillQuickStyleFields(styleKey, device);
+        setQuickTab("content");
+
+        const valueInput = $("#pd-quick-edit-value");
+        const colorPicker = $("#pd-quick-edit-color-picker");
+        const fileInput = $("#pd-quick-edit-file");
+
+        if (type === "image") {
+          setQuickPreview(value);
+          valueInput?.addEventListener("input", () => setQuickPreview(valueInput.value));
+          fileInput?.addEventListener("change", () => {
+            const file = fileInput.files?.[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = () => {
+              valueInput.value = String(reader.result || "");
+              setQuickPreview(valueInput.value);
+            };
+            reader.readAsDataURL(file);
+          });
+        }
+
+        if (type === "color" && colorPicker && valueInput) {
+          colorPicker.addEventListener("input", () => {
+            valueInput.value = colorPicker.value;
+          });
+        }
+
+        if (modal) {
+          modal.hidden = false;
+          modal.setAttribute("aria-hidden", "false");
+          window.setTimeout(() => valueInput?.focus(), 30);
+        }
+      }
+
+      function closeQuickEdit() {
+        const modal = $("#pd-quick-edit-modal");
+        pdQuickEdit = null;
+        if (modal) {
+          modal.hidden = true;
+          modal.setAttribute("aria-hidden", "true");
+        }
+      }
+
+      function applyQuickEdit() {
+        if (!pdQuickEdit) return;
+        const valueInput = $("#pd-quick-edit-value");
+        if (valueInput) {
+          setPath(PROPOSTA, pdQuickEdit.path, valueInput.value);
+        }
+        readQuickStyleFields(pdQuickEdit.styleKey);
+        if (pdQuickEdit.styleKey) {
+          PROPOSTA.visual ||= {};
+          PROPOSTA.visual[pdQuickEdit.styleKey] = normalizeVisualStyleEntry(pdQuickEdit.visualDraft || {});
+        }
+        refreshProposal();
+        renderAdminEditor();
+        closeQuickEdit();
+        showAdminToast("Alteração aplicada. Salve o rascunho para manter.");
+      }
+
+      function handleVisualEditClick(event) {
+        if (!pdAdminMode || PD_ADMIN_EXPORT_LOCK) return;
+        const target = event.target.closest?.("[data-pd-edit]");
+        if (!target || target.closest("[data-pd-admin]")) return;
+        event.preventDefault();
+        event.stopPropagation();
+        openQuickEdit(target);
+      }
+
+      function openAdminDrawer() {
+        if (!pdAdminMode) return;
+        renderAdminEditor();
+        const drawer = $("#pd-admin-drawer");
+        const backdrop = $("#pd-admin-backdrop");
+        if (drawer) {
+          drawer.hidden = false;
+          drawer.setAttribute("aria-hidden", "false");
+        }
+        if (backdrop) backdrop.hidden = false;
+      }
+
+      function closeAdminDrawer() {
+        const drawer = $("#pd-admin-drawer");
+        const backdrop = $("#pd-admin-backdrop");
+        if (drawer) {
+          drawer.hidden = true;
+          drawer.setAttribute("aria-hidden", "true");
+        }
+        if (backdrop) backdrop.hidden = true;
+      }
+
+      function setAdminMode(active) {
+        if (PD_ADMIN_EXPORT_LOCK) return;
+        pdAdminMode = active;
+        const bar = $("#pd-admin-bar");
+        if (bar) bar.hidden = !active;
+        updateAdminActiveClass();
+        if (!active) {
+          closeAdminDrawer();
+          closeQuickEdit();
+        } else {
+          renderAdminEditor();
+          showAdminToast("Modo admin ativado. Clique em textos, imagens e blocos para editar.");
+        }
+      }
+
+      function restoreDefaultProposal() {
+        if (!window.confirm("Restaurar o padrão e apagar o rascunho local?")) return;
+        PROPOSTA = deepClone(PD_DEFAULT_PROPOSTA);
+        localStorage.removeItem(PD_STORAGE_KEY);
+        refreshProposal();
+        renderAdminEditor();
+        showAdminToast("Padrão restaurado.");
+      }
+
+      function downloadTextFile(filename, content, type = "text/plain;charset=utf-8") {
+        const blob = new Blob([content], { type });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(url);
+      }
+
+      function exportFinalHTML() {
+        applyAdminFormToProposal();
+        renderVisualStyles();
+        const proposalShell = $("#pd-proposal-shell");
+        const exportShell = proposalShell?.cloneNode(true);
+        if (exportShell) {
+          exportShell.classList.remove("pd-admin-active");
+          exportShell.querySelectorAll("[data-pd-edit], [data-pd-path]").forEach((element) => {
+            element.removeAttribute("data-pd-edit");
+            element.removeAttribute("data-pd-path");
+          });
+        }
+        const styleTag = Array.from(document.querySelectorAll("style")).find((style) =>
+          style.id !== "pd-dynamic-visual-styles" && style.textContent.includes(".pd-proposal")
+        );
+        const dynamicStyleTag = document.getElementById("pd-dynamic-visual-styles");
+        const serializedProposal = JSON.stringify(PROPOSTA, null, 8).replace(/</g, "\\u003c");
+        let scriptSource = PD_SCRIPT_SOURCE || "";
+        scriptSource = scriptSource.replace(
+          /let PROPOSTA = [\s\S]*?\n\s*const PD_STORAGE_KEY =/,
+          `let PROPOSTA = ${serializedProposal};\n\n      const PD_STORAGE_KEY =`
+        );
+        scriptSource = scriptSource.replace("const PD_ADMIN_EXPORT_LOCK = false;", "const PD_ADMIN_EXPORT_LOCK = true;");
+
+        const html = `<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow" />
+    <title>${escapeHTML(PROPOSTA.brand.agencyName)} | ${escapeHTML(PROPOSTA.client.proposalName)} — ${escapeHTML(PROPOSTA.client.name)}</title>
+    <style>
+${styleTag ? styleTag.textContent : ""}
+    </style>
+${dynamicStyleTag?.textContent ? `    <style id="pd-dynamic-visual-styles">\n${dynamicStyleTag.textContent}\n    </style>` : ""}
+  </head>
+  <body>
+${exportShell ? exportShell.outerHTML : ""}
+    <script>
+${scriptSource}
+    <\/script>
+  </body>
+</html>`;
+
+        downloadTextFile(`proposta-${PROPOSTA.client.slug || "pixel-demand"}.html`, html, "text/html;charset=utf-8");
+        showAdminToast("HTML final exportado sem painel admin.");
+      }
+
+      function exportPDF() {
+        applyAdminFormToProposal();
+        showAdminToast("Abrindo impressão para exportar PDF.");
+        window.setTimeout(() => window.print(), 120);
+      }
+
+      function setupAdmin() {
+        if (PD_ADMIN_EXPORT_LOCK) return;
+
+        window.addEventListener("keydown", (event) => {
+          if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === "e") {
+            event.preventDefault();
+            setAdminMode(!pdAdminMode);
+          }
+        });
+
+        document.addEventListener("click", handleVisualEditClick, true);
+        $("#pd-admin-visual")?.addEventListener("click", () => {
+          closeAdminDrawer();
+          showAdminToast("Clique diretamente em um texto, imagem, card ou bloco da proposta.");
+        });
+        $("#pd-admin-open")?.addEventListener("click", openAdminDrawer);
+        $("#pd-admin-close")?.addEventListener("click", closeAdminDrawer);
+        $("#pd-admin-close-footer")?.addEventListener("click", closeAdminDrawer);
+        $("#pd-admin-backdrop")?.addEventListener("click", closeAdminDrawer);
+        $("#pd-admin-exit")?.addEventListener("click", () => setAdminMode(false));
+        $("#pd-quick-edit-close")?.addEventListener("click", closeQuickEdit);
+        $("#pd-quick-edit-cancel")?.addEventListener("click", closeQuickEdit);
+        $("#pd-quick-edit-apply")?.addEventListener("click", applyQuickEdit);
+        $("#pd-quick-edit-modal")?.addEventListener("click", (event) => {
+          if (event.target?.id === "pd-quick-edit-modal") closeQuickEdit();
+        });
+        $("#pd-style-device")?.addEventListener("change", (event) => {
+          if (!pdQuickEdit) return;
+          readQuickStyleFields(pdQuickEdit.styleKey);
+          pdQuickEdit.device = event.target.value || "desktop";
+          fillQuickStyleFields(pdQuickEdit.styleKey, pdQuickEdit.device);
+        });
+        $$(".pd-quick-edit-tab").forEach((button) => {
+          button.addEventListener("click", () => setQuickTab(button.dataset.quickTab || "content"));
+        });
+        $("#pd-admin-apply")?.addEventListener("click", () => {
+          applyAdminFormToProposal();
+          renderAdminEditor();
+          showAdminToast("Prévia atualizada.");
+        });
+        $("#pd-admin-save")?.addEventListener("click", saveDraft);
+        $("#pd-admin-save-drawer")?.addEventListener("click", saveDraft);
+        $("#pd-admin-reset")?.addEventListener("click", restoreDefaultProposal);
+        $("#pd-admin-export-html")?.addEventListener("click", exportFinalHTML);
+        $("#pd-admin-export-pdf")?.addEventListener("click", exportPDF);
+      }
+
+      function initProposal() {
+        refreshProposal();
+      }
+
+      loadSavedDraft();
+      migrateVisualStyles();
+      initProposal();
+      setupAdmin();
+    </script>
+  

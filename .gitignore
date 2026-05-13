@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.vercel/
+*.local
+referencia-figma-make/
+vite-dev.log
+vite-dev.err.log
+*.log
+dist/
+node_modules/

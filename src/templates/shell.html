@@ -1,0 +1,121 @@
+<div class="pd-proposal" id="pd-proposal-shell">
+      <header class="pd-topbar">
+        <a class="pd-brand" href="#top" aria-label="Pixel Demand">
+          <img class="pd-brand-symbol" id="pd-brand-symbol" src="/imagens identidade visual pixel demand/icone pixel demand.png" alt="" data-pd-edit="image" data-pd-path="brand.icon" onerror="handleImageError(this)" />
+          <img class="pd-brand-wordmark" id="pd-brand-wordmark" src="/imagens identidade visual pixel demand/PIXEL DEMAND - KV 2026-18.png" alt="Pixel Demand" data-pd-edit="image" data-pd-path="brand.wordmark" onerror="handleImageError(this)" />
+        </a>
+        <nav class="pd-nav" id="pd-nav" aria-label="Seções da proposta"></nav>
+      </header>
+
+      <main class="pd-main" id="top">
+        <div id="pd-app"></div>
+      </main>
+    </div>
+
+    <div class="pd-admin-bar" id="pd-admin-bar" data-pd-admin hidden>
+      <span class="pd-admin-badge">Modo admin</span>
+      <button class="pd-admin-button primary" type="button" id="pd-admin-visual">Editar visual</button>
+      <button class="pd-admin-button" type="button" id="pd-admin-open">Painel completo</button>
+      <button class="pd-admin-button" type="button" id="pd-admin-save">Salvar rascunho</button>
+      <button class="pd-admin-button" type="button" id="pd-admin-export-html">Exportar HTML</button>
+      <button class="pd-admin-button" type="button" id="pd-admin-export-pdf">Exportar PDF</button>
+      <button class="pd-admin-button danger" type="button" id="pd-admin-reset">Resetar</button>
+      <button class="pd-admin-button" type="button" id="pd-admin-exit">Sair</button>
+    </div>
+
+    <div class="pd-admin-backdrop" id="pd-admin-backdrop" data-pd-admin hidden></div>
+
+    <aside class="pd-admin-drawer" id="pd-admin-drawer" data-pd-admin hidden aria-hidden="true">
+      <header class="pd-admin-drawer-header">
+        <div>
+          <div class="pd-kicker">Pixel Demand</div>
+          <h2>Editor da proposta</h2>
+          <p class="pd-admin-help">As alterações editam o objeto PROPOSTA em memória. Use “Salvar rascunho” para guardar localmente.</p>
+        </div>
+        <button class="pd-admin-close" type="button" id="pd-admin-close" aria-label="Fechar editor">×</button>
+      </header>
+
+      <div class="pd-admin-drawer-body">
+        <form id="pd-admin-form">
+          <div id="pd-admin-fields"></div>
+        </form>
+      </div>
+
+      <footer class="pd-admin-drawer-footer">
+        <button class="pd-admin-button primary" type="button" id="pd-admin-apply">Aplicar prévia</button>
+        <button class="pd-admin-button" type="button" id="pd-admin-save-drawer">Salvar rascunho</button>
+        <button class="pd-admin-button" type="button" id="pd-admin-close-footer">Fechar</button>
+      </footer>
+    </aside>
+
+    <div class="pd-admin-toast" id="pd-admin-toast" data-pd-admin hidden></div>
+
+    <div class="pd-quick-edit-modal" id="pd-quick-edit-modal" data-pd-admin hidden aria-hidden="true">
+      <div class="pd-quick-edit-card" role="dialog" aria-modal="true" aria-labelledby="pd-quick-edit-title">
+        <header class="pd-quick-edit-header">
+          <div>
+            <h2 id="pd-quick-edit-title">Edição rápida</h2>
+            <p class="pd-quick-edit-path" id="pd-quick-edit-path"></p>
+          </div>
+          <button class="pd-admin-close" type="button" id="pd-quick-edit-close" aria-label="Fechar edição rápida">×</button>
+        </header>
+
+        <div class="pd-quick-edit-tabs" role="tablist" aria-label="Tipo de edição">
+          <button class="pd-quick-edit-tab is-active" type="button" data-quick-tab="content">Conteúdo</button>
+          <button class="pd-quick-edit-tab" type="button" data-quick-tab="style">Estilo</button>
+        </div>
+
+        <div class="pd-quick-edit-pane" id="pd-quick-edit-content">
+          <div class="pd-quick-edit-fields" id="pd-quick-edit-content-fields"></div>
+        </div>
+
+        <div class="pd-quick-edit-pane" id="pd-quick-edit-style" hidden>
+          <div class="pd-quick-edit-fields">
+            <label class="pd-admin-label">
+              <span>Dispositivo</span>
+              <select id="pd-style-device">
+                <option value="desktop">Desktop</option>
+                <option value="tablet">Tablet</option>
+                <option value="mobile">Mobile</option>
+              </select>
+            </label>
+            <div class="pd-admin-grid">
+              <label class="pd-admin-label">
+                <span>Tamanho da fonte</span>
+                <input type="text" id="pd-style-font-size" placeholder="ex: clamp(2rem, 5vw, 4rem)" />
+              </label>
+              <label class="pd-admin-label">
+                <span>Peso da fonte</span>
+                <input type="text" id="pd-style-font-weight" placeholder="ex: 800" />
+              </label>
+              <label class="pd-admin-label">
+                <span>Line-height</span>
+                <input type="text" id="pd-style-line-height" placeholder="ex: 1.2" />
+              </label>
+              <label class="pd-admin-label">
+                <span>Letter-spacing</span>
+                <input type="text" id="pd-style-letter-spacing" placeholder="ex: 0.02em" />
+              </label>
+              <label class="pd-admin-label">
+                <span>Alinhamento</span>
+                <select id="pd-style-text-align">
+                  <option value="">Padrão</option>
+                  <option value="left">Esquerda</option>
+                  <option value="center">Centro</option>
+                  <option value="right">Direita</option>
+                </select>
+              </label>
+              <label class="pd-admin-label">
+                <span>Cor</span>
+                <input type="text" id="pd-style-color" placeholder="ex: #2dff12 ou var(--pd-lime)" />
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <footer class="pd-quick-edit-actions">
+          <button class="pd-admin-button" type="button" id="pd-quick-edit-cancel">Cancelar</button>
+          <button class="pd-admin-button primary" type="button" id="pd-quick-edit-apply">Aplicar</button>
+        </footer>
+      </div>
+    </div>
