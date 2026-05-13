@@ -92,8 +92,13 @@
         });
       }
 
-      function safeCssValue(value) {
-        return String(value || "").replace(/[{};]/g, "").trim();
+      function safeCssValue(value, key = "") {
+        const cleaned = String(value || "").replace(/!important/gi, "").replace(/[{};]/g, "").trim();
+        if (!cleaned) return "";
+        if ((key === "fontSize" || key === "letterSpacing") && /^-?\d+(\.\d+)?$/.test(cleaned)) {
+          return `${cleaned}px`;
+        }
+        return cleaned;
       }
 
       function visualStyleText(styleKey, device = "desktop", source = PROPOSTA.visual) {
@@ -101,8 +106,8 @@
         const style = entry[device] || {};
         return Object.entries(PD_STYLE_PROPS)
           .map(([key, cssProp]) => {
-            const value = safeCssValue(style[key]);
-            return value ? `${cssProp}: ${value}` : "";
+            const value = safeCssValue(style[key], key);
+            return value ? `${cssProp}: ${value} !important` : "";
           })
           .filter(Boolean)
           .join("; ");
@@ -112,13 +117,13 @@
         return String(value || "").replace(/\\/g, "\\\\").replace(/"/g, '\\"');
       }
 
-      function renderVisualStyles() {
+      function renderVisualStyles(source = PROPOSTA.visual) {
         migrateVisualStyles();
-        const visual = PROPOSTA.visual || {};
+        const visual = source || PROPOSTA.visual || {};
         const rules = [];
 
         Object.keys(visual).forEach((styleKey) => {
-          const selector = `.pd-proposal [data-pd-style="${cssAttributeValue(styleKey)}"]`;
+          const selector = `.pd-proposal.pd-proposal [data-pd-style="${cssAttributeValue(styleKey)}"][data-pd-style]`;
           const desktop = visualStyleText(styleKey, "desktop", visual);
           const tablet = visualStyleText(styleKey, "tablet", visual);
           const mobile = visualStyleText(styleKey, "mobile", visual);
@@ -132,7 +137,10 @@
         if (!styleTag) {
           styleTag = document.createElement("style");
           styleTag.id = "pd-dynamic-visual-styles";
-          (document.head || document.body || document.documentElement).appendChild(styleTag);
+        }
+        const styleParent = document.head || document.body || document.documentElement;
+        if (styleTag.parentNode !== styleParent || styleParent.lastElementChild !== styleTag) {
+          styleParent.appendChild(styleTag);
         }
         styleTag.textContent = rules.join("\n\n");
       }
@@ -1083,6 +1091,20 @@
         });
       }
 
+      function quickVisualSource() {
+        const visual = deepClone(PROPOSTA.visual || {});
+        if (pdQuickEdit?.styleKey) {
+          visual[pdQuickEdit.styleKey] = normalizeVisualStyleEntry(pdQuickEdit.visualDraft || {});
+        }
+        return visual;
+      }
+
+      function previewQuickStyleFields() {
+        if (!pdQuickEdit?.styleKey) return;
+        readQuickStyleFields(pdQuickEdit.styleKey);
+        renderVisualStyles(quickVisualSource());
+      }
+
       function openQuickEdit(element) {
         if (!pdAdminMode || !element) return;
         const type = element.dataset.pdEdit || "text";
@@ -1140,13 +1162,15 @@
         }
       }
 
-      function closeQuickEdit() {
+      function closeQuickEdit(options = {}) {
         const modal = $("#pd-quick-edit-modal");
+        const shouldRestoreStyles = pdQuickEdit && !options.keepVisualStyles;
         pdQuickEdit = null;
         if (modal) {
           modal.hidden = true;
           modal.setAttribute("aria-hidden", "true");
         }
+        if (shouldRestoreStyles) renderVisualStyles();
       }
 
       function applyQuickEdit() {
@@ -1162,7 +1186,7 @@
         }
         refreshProposal();
         renderAdminEditor();
-        closeQuickEdit();
+        closeQuickEdit({ keepVisualStyles: true });
         showAdminToast("Alteração aplicada. Salve o rascunho para manter.");
       }
 
@@ -1326,6 +1350,12 @@ ${scriptSource}
           readQuickStyleFields(pdQuickEdit.styleKey);
           pdQuickEdit.device = event.target.value || "desktop";
           fillQuickStyleFields(pdQuickEdit.styleKey, pdQuickEdit.device);
+          renderVisualStyles(quickVisualSource());
+        });
+        Object.keys(PD_STYLE_PROPS).forEach((key) => {
+          const input = $(`#${styleInputId(key)}`);
+          input?.addEventListener("input", previewQuickStyleFields);
+          input?.addEventListener("change", previewQuickStyleFields);
         });
         $$(".pd-quick-edit-tab").forEach((button) => {
           button.addEventListener("click", () => setQuickTab(button.dataset.quickTab || "content"));
