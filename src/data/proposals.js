@@ -472,28 +472,56 @@ const nonnaAngelaProposal = proposalVariant({
     description: "Caminhos comerciais possíveis para adequar profundidade, ritmo e investimento.",
     items: [
       {
-        name: "Essencial",
-        price: "R$ 4.800",
-        description: "Base visual, conteúdos prioritários e organização inicial para gerar consistência rapidamente.",
-        tag: "Entrada",
+        name: "Projeto Fechado",
+        price: "R$ 1.500",
+        description: "Captação única para gerar os primeiros materiais profissionais da Massas Nonna Angela.",
+        tag: "Pacote 01",
         recommended: false,
-        investmentNote: "Pacote Essencial, com condição de pagamento em 50% na aprovação e 50% na entrega final."
+        investmentNote: "Pacote Projeto Fechado — pagamento único de R$ 1.500 na aprovação.",
+        details: [
+          "1 visita presencial de captação",
+          "vídeos curtos editados para Reels e Stories",
+          "registros dos preparos, massas, recheios, pratos e bastidores",
+          "cortes verticais prontos para publicação",
+          "direção visual simples no dia da gravação",
+          "entrega organizada dos materiais finais"
+        ]
       },
       {
-        name: "Performance",
-        price: "R$ 8.000",
-        description: "Direção completa, social, landing page e materiais comerciais para transformar a marca em uma vitrine mais forte para pedidos.",
-        tag: "Recomendado",
+        name: "Plano Mensal Essencial",
+        price: "R$ 2.500/mês",
+        description: "Produção mensal para manter a Massas Nonna Angela ativa e desejável nas redes sociais.",
+        tag: "Pacote 02",
         recommended: true,
-        investmentNote: "Pacote Performance, com condição de pagamento em 50% na aprovação e 50% na entrega final."
+        investmentNote: "Plano Mensal Essencial — R$ 2.500/mês com contrato mensal renovável.",
+        details: [
+          "4 captações presenciais por mês",
+          "10 a 12 vídeos curtos editados",
+          "conteúdos para Reels, Stories e campanhas simples",
+          "legendas e chamadas comerciais",
+          "direção visual mensal",
+          "organização dos conteúdos do mês",
+          "sugestões de temas, ofertas e momentos de venda"
+        ]
       },
       {
-        name: "Premium",
-        price: "R$ 12.500",
-        description: "Escopo ampliado com motion, campanhas, páginas extras e acompanhamento mais próximo para uma presença digital mais robusta.",
-        tag: "Completo",
+        name: "Plano Mensal Completo",
+        price: "R$ 3.500/mês",
+        description: "Gestão ampliada da comunicação da Massas Nonna Angela.",
+        tag: "Pacote 03",
         recommended: false,
-        investmentNote: "Pacote Premium, com condição de pagamento em 50% na aprovação e 50% na entrega final."
+        investmentNote: "Plano Mensal Completo — R$ 3.500/mês com contrato mensal renovável.",
+        details: [
+          "8 captações presenciais por mês",
+          "12 a 16 vídeos curtos editados",
+          "6 a 8 posts ou carrosséis simples",
+          "Stories comerciais e institucionais",
+          "campanhas para datas especiais",
+          "peças para encomendas, combos e cardápio",
+          "planejamento mensal de comunicação",
+          "organização visual do calendário",
+          "acompanhamento estratégico da marca"
+        ]
       }
     ]
   },
@@ -547,9 +575,9 @@ const nonnaAngelaProposal = proposalVariant({
   },
   investment: {
     title: "Investimento recomendado",
-    packageName: "Performance",
-    price: "R$ 8.000",
-    note: "Pacote Performance recomendado para fortalecer presença digital, materiais comerciais e conversão em pedidos, com condição de pagamento em 50% na aprovação e 50% na entrega final."
+    packageName: "Plano Mensal Essencial",
+    price: "R$ 2.500/mês",
+    note: "Plano Mensal Essencial recomendado para manter a Massas Nonna Angela ativa com produção de conteúdo consistente e presença digital fortalecida. Contrato mensal renovável."
   },
   approval: {
     title: "Pronto para aprovar?",

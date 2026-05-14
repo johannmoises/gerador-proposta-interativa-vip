@@ -351,6 +351,19 @@
             <h3${editAttrs("text", `packages.items.${index}.name`)}>${escapeHTML(item.name)}</h3>
             <p${editAttrs("textarea", `packages.items.${index}.description`)}>${escapeHTML(item.description)}</p>
             <strong class="pd-price"${editAttrs("text", `packages.items.${index}.price`)}>${escapeHTML(item.price)}</strong>
+            ${item.details && item.details.length ? `
+              <article class="pd-accordion-item pd-pkg-detail">
+                <button class="pd-accordion-trigger pd-package-details-trigger" type="button" aria-expanded="false">
+                  <span class="pd-pkg-detail-label">Ver detalhes do pacote</span>
+                  <span class="pd-pkg-detail-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="pd-accordion-panel pd-package-details-panel">
+                  <ul class="pd-pkg-detail-list">
+                    ${item.details.map(d => `<li>${escapeHTML(d)}</li>`).join("")}
+                  </ul>
+                </div>
+              </article>
+            ` : ""}
             ${PROPOSTA.behavior.enablePackageSelection ? `
               <div class="pd-card-actions">
                 <button class="pd-button small pd-select-package" type="button" data-package-index="${index}">
