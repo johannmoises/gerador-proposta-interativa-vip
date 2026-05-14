@@ -421,13 +421,13 @@ const nonnaAngelaProposal = proposalVariant({
     lead: "Uma proposta para organizar a presença digital, valorizar os produtos, fortalecer a marca e facilitar pedidos com uma comunicação mais clara, premium e comercial."
   },
   summary: {
-    title: "Valorizar a tradição da marca com uma presença digital mais consistente e vendável.",
-    text: "Esta proposta organiza diagnóstico, escopo, entregas, investimento e próximos passos para transformar a comunicação da Massas Nonna Angela em uma vitrine mais forte para produtos, pedidos e relacionamento."
+    title: "Organizar a comunicação sem mudar a essência — só torná-la mais bonita, coerente e comercial.",
+    text: "Esta proposta apresenta como a Pixel Demand pode entrar como apoio profissional para elevar a qualidade visual, organizar a comunicação e fortalecer a presença digital da Massas Nonna Angela com mais consistência e resultado."
   },
   intro: {
     title: "Visão do projeto",
     description: "Resumo direto do que esta proposta resolve para a Massas Nonna Angela.",
-    text: "A Massas Nonna Angela tem uma oportunidade direta de fortalecer percepção de valor, apresentar melhor seus produtos e transformar seus canais digitais em uma vitrine mais consistente para gerar desejo, confiança e novos pedidos."
+    text: "A ideia não é trocar o que já existe, nem mudar a essência da marca. É elevar o padrão da comunicação com imagens mais apetitosas, vídeos mais organizados e uma presença digital mais coerente com a qualidade real dos produtos da Massas Nonna Angela."
   },
   diagnosis: {
     title: "Contexto",
@@ -469,58 +469,54 @@ const nonnaAngelaProposal = proposalVariant({
     ]
   },
   packages: {
-    description: "Caminhos comerciais possíveis para adequar profundidade, ritmo e investimento.",
+    description: "Caminhos possíveis para começar, manter ou ampliar a comunicação da Massas Nonna Angela.",
     items: [
       {
         name: "Projeto Fechado",
-        price: "R$ 1.500",
-        description: "Captação única para gerar os primeiros materiais profissionais da Massas Nonna Angela.",
+        price: "R$ 1.000",
+        description: "Uma produção pontual para criar os primeiros materiais profissionais da Massas Nonna Angela, com vídeos e registros dos produtos, preparos e bastidores.",
         tag: "Pacote 01",
         recommended: false,
-        investmentNote: "Pacote Projeto Fechado — pagamento único de R$ 1.500 na aprovação.",
+        investmentNote: "Projeto Fechado — R$ 1.000, pagamento único na aprovação. Ideal para começar sem compromisso mensal e sentir, na prática, a diferença de uma comunicação mais profissional.",
         details: [
-          "1 visita presencial de captação",
-          "vídeos curtos editados para Reels e Stories",
-          "registros dos preparos, massas, recheios, pratos e bastidores",
-          "cortes verticais prontos para publicação",
-          "direção visual simples no dia da gravação",
-          "entrega organizada dos materiais finais"
+          "1 captação presencial",
+          "4 a 6 vídeos curtos editados",
+          "registros de massas, pratos, preparos e bastidores",
+          "cortes para Reels e Stories",
+          "direção visual no dia da gravação",
+          "entrega organizada dos arquivos finais"
         ]
       },
       {
         name: "Plano Mensal Essencial",
-        price: "R$ 2.500/mês",
-        description: "Produção mensal para manter a Massas Nonna Angela ativa e desejável nas redes sociais.",
+        price: "R$ 1.400/mês",
+        description: "Um plano mensal leve para manter a Massas Nonna Angela presente nas redes, com vídeos curtos, conteúdos comerciais e organização básica da comunicação.",
         tag: "Pacote 02",
         recommended: true,
-        investmentNote: "Plano Mensal Essencial — R$ 2.500/mês com contrato mensal renovável.",
+        investmentNote: "Plano Mensal Essencial — R$ 1.400/mês, contrato mensal renovável. Condição especial para a fase inicial de organização da comunicação da Massas Nonna Angela. A proposta é começar de forma acessível, mostrar a diferença na prática e evoluir conforme a demanda real da marca.",
         details: [
-          "4 captações presenciais por mês",
-          "10 a 12 vídeos curtos editados",
-          "conteúdos para Reels, Stories e campanhas simples",
-          "legendas e chamadas comerciais",
-          "direção visual mensal",
-          "organização dos conteúdos do mês",
-          "sugestões de temas, ofertas e momentos de venda"
+          "1 captação presencial por mês",
+          "6 a 8 vídeos curtos editados",
+          "conteúdos para Reels e Stories",
+          "chamadas comerciais para encomendas e produtos",
+          "organização básica dos conteúdos do mês",
+          "suporte na direção visual da marca"
         ]
       },
       {
         name: "Plano Mensal Completo",
-        price: "R$ 3.500/mês",
-        description: "Gestão ampliada da comunicação da Massas Nonna Angela.",
+        price: "R$ 2.000/mês",
+        description: "Um acompanhamento mais completo para fortalecer a presença digital da Massas Nonna Angela, com mais vídeos, posts, campanhas e apoio mensal na comunicação.",
         tag: "Pacote 03",
         recommended: false,
-        investmentNote: "Plano Mensal Completo — R$ 3.500/mês com contrato mensal renovável.",
+        investmentNote: "Plano Mensal Completo — R$ 2.000/mês, contrato mensal renovável. Indicado para transformar a comunicação em uma rotina mais forte, bonita e comercial, sem depender de postagens improvisadas.",
         details: [
-          "8 captações presenciais por mês",
-          "12 a 16 vídeos curtos editados",
-          "6 a 8 posts ou carrosséis simples",
+          "2 captações presenciais por mês",
+          "10 a 12 vídeos curtos editados",
+          "4 posts ou carrosséis simples",
           "Stories comerciais e institucionais",
           "campanhas para datas especiais",
-          "peças para encomendas, combos e cardápio",
-          "planejamento mensal de comunicação",
-          "organização visual do calendário",
-          "acompanhamento estratégico da marca"
+          "acompanhamento mensal da comunicação"
         ]
       }
     ]
@@ -576,8 +572,8 @@ const nonnaAngelaProposal = proposalVariant({
   investment: {
     title: "Investimento recomendado",
     packageName: "Plano Mensal Essencial",
-    price: "R$ 2.500/mês",
-    note: "Plano Mensal Essencial recomendado para manter a Massas Nonna Angela ativa com produção de conteúdo consistente e presença digital fortalecida. Contrato mensal renovável."
+    price: "R$ 1.400/mês",
+    note: "Plano Mensal Essencial — R$ 1.400/mês, contrato mensal renovável. Condição especial para a fase inicial de organização da comunicação da Massas Nonna Angela. A proposta é começar de forma acessível, mostrar a diferença na prática e evoluir conforme a demanda real da marca."
   },
   approval: {
     title: "Pronto para aprovar?",
