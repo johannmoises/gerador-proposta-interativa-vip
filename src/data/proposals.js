@@ -389,42 +389,181 @@ function proposalVariant(overrides) {
   return mergeDeep(deepClone(baseProposal), overrides);
 }
 
+const nonnaAngelaProposal = proposalVariant({
+  visual: {
+    heroTitle: {
+      desktop: { fontSize: "65", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
+    },
+    heroHighlight: {
+      desktop: { fontSize: "40", fontWeight: "500", lineHeight: "", letterSpacing: "2", textAlign: "", color: "" }
+    },
+    heroLead: {
+      desktop: { fontSize: "20", fontWeight: "100", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
+    }
+  },
+  brand: {
+    identityArt: "/imagens identidade visual pixel demand/nonna.jpg"
+  },
+  client: {
+    name: "Massas Nonna Angela",
+    slug: "nonna-angela",
+    proposalName: "Proposta de investimento",
+    validity: "7 dias",
+    date: "Maio de 2026"
+  },
+  contact: {
+    whatsappApproveText: "Quero aprovar a proposta da Pixel Demand para Massas Nonna Angela",
+    whatsappQuestionText: "Quero tirar uma dúvida sobre a proposta da Pixel Demand para Massas Nonna Angela"
+  },
+  hero: {
+    title: "Proposta de investimento",
+    highlight: "Massas Nonna Angela",
+    lead: "Uma proposta para organizar a presença digital, valorizar os produtos, fortalecer a marca e facilitar pedidos com uma comunicação mais clara, premium e comercial."
+  },
+  summary: {
+    title: "Valorizar a tradição da marca com uma presença digital mais consistente e vendável.",
+    text: "Esta proposta organiza diagnóstico, escopo, entregas, investimento e próximos passos para transformar a comunicação da Massas Nonna Angela em uma vitrine mais forte para produtos, pedidos e relacionamento."
+  },
+  intro: {
+    title: "Visão do projeto",
+    description: "Resumo direto do que esta proposta resolve para a Massas Nonna Angela.",
+    text: "A Massas Nonna Angela tem uma oportunidade direta de fortalecer percepção de valor, apresentar melhor seus produtos e transformar seus canais digitais em uma vitrine mais consistente para gerar desejo, confiança e novos pedidos."
+  },
+  diagnosis: {
+    title: "Contexto",
+    description: "Pontos de atenção identificados antes da construção da solução.",
+    items: [
+      "A comunicação digital ainda pode transmitir com mais força a tradição, o sabor, a qualidade e o cuidado por trás da marca.",
+      "Existe uma oportunidade de padronizar posts, stories e materiais comerciais para valorizar cardápio, massas, molhos, encomendas e ofertas.",
+      "O conteúdo pode apresentar melhor diferenciais, processo artesanal, produtos, atendimento, rotina e prova social.",
+      "Uma linha visual mais consistente pode aumentar lembrança de marca, desejo, autoridade e conversão em pedidos."
+    ]
+  },
+  services: {
+    description: "Entregas principais organizadas para aumentar clareza, consistência e conversão.",
+    items: [
+      {
+        title: "Direção visual",
+        text: "Sistema de comunicação com linguagem, ritmo, composição e padrão visual para produtos, ofertas e rotina da marca."
+      },
+      {
+        title: "Social media",
+        text: "Planejamento de conteúdo e criativos para feed, stories e anúncios com foco em desejo, confiança e pedidos."
+      },
+      {
+        title: "Materiais comerciais",
+        text: "Peças de apoio para cardápio, combos, encomendas, datas especiais, campanhas sazonais e comunicação de ofertas."
+      },
+      {
+        title: "Landing page",
+        text: "Página objetiva para apresentar a marca, produtos, diferenciais e contato com foco em conversão."
+      },
+      {
+        title: "Motion e vídeo",
+        text: "Cortes, animações e recursos visuais para aumentar retenção e percepção profissional nas campanhas."
+      },
+      {
+        title: "Gestão de projeto",
+        text: "Organização de entregas, alinhamentos, prioridades e acompanhamento durante o projeto."
+      }
+    ]
+  },
+  packages: {
+    description: "Caminhos comerciais possíveis para adequar profundidade, ritmo e investimento.",
+    items: [
+      {
+        name: "Essencial",
+        price: "R$ 4.800",
+        description: "Base visual, conteúdos prioritários e organização inicial para gerar consistência rapidamente.",
+        tag: "Entrada",
+        recommended: false,
+        investmentNote: "Pacote Essencial, com condição de pagamento em 50% na aprovação e 50% na entrega final."
+      },
+      {
+        name: "Performance",
+        price: "R$ 8.000",
+        description: "Direção completa, social, landing page e materiais comerciais para transformar a marca em uma vitrine mais forte para pedidos.",
+        tag: "Recomendado",
+        recommended: true,
+        investmentNote: "Pacote Performance, com condição de pagamento em 50% na aprovação e 50% na entrega final."
+      },
+      {
+        name: "Premium",
+        price: "R$ 12.500",
+        description: "Escopo ampliado com motion, campanhas, páginas extras e acompanhamento mais próximo para uma presença digital mais robusta.",
+        tag: "Completo",
+        recommended: false,
+        investmentNote: "Pacote Premium, com condição de pagamento em 50% na aprovação e 50% na entrega final."
+      }
+    ]
+  },
+  details: {
+    items: [
+      {
+        title: "Identidade aplicada e direção criativa",
+        open: true,
+        text: "Organização da linguagem visual para manter consistência em todos os pontos de contato da Massas Nonna Angela.",
+        bullets: [
+          "Guia visual aplicado para redes, campanhas e materiais comerciais.",
+          "Paleta, uso tipográfico, composições e hierarquia visual.",
+          "Modelos base para comunicação recorrente de produtos e ofertas."
+        ]
+      },
+      {
+        title: "Conteúdos e materiais digitais",
+        open: false,
+        text: "Criativos pensados para comunicar sabor, qualidade, diferenciais e ofertas de forma mais comercial.",
+        bullets: [
+          "Posts estáticos e carrosséis para produtos, bastidores e prova social.",
+          "Stories de campanha, relacionamento, ofertas e encomendas.",
+          "Peças comerciais para cardápio, combos, datas especiais e chamadas para pedido."
+        ]
+      },
+      {
+        title: "Página de conversão",
+        open: false,
+        text: "Landing page responsiva para apresentar a Massas Nonna Angela e conduzir o interessado ao contato.",
+        bullets: [
+          "Hero com mensagem principal e chamada para pedido.",
+          "Blocos de produtos, diferenciais, benefícios e prova social.",
+          "CTA para WhatsApp e captura de interesse."
+        ]
+      }
+    ]
+  },
+  scope: {
+    included: [
+      "Planejamento e direção visual das entregas descritas.",
+      "Criação dos materiais previstos no pacote aprovado.",
+      "Ajustes de refinamento dentro do escopo combinado.",
+      "Orientação de uso e organização final dos arquivos."
+    ],
+    excluded: [
+      "Gestão de tráfego pago ou verba de mídia.",
+      "Produção fotográfica ou captação presencial extra não prevista no escopo.",
+      "Demandas urgentes fora do cronograma combinado.",
+      "Novas páginas, peças ou campanhas não listadas na proposta."
+    ]
+  },
+  investment: {
+    title: "Investimento recomendado",
+    packageName: "Performance",
+    price: "R$ 8.000",
+    note: "Pacote Performance recomendado para fortalecer presença digital, materiais comerciais e conversão em pedidos, com condição de pagamento em 50% na aprovação e 50% na entrega final."
+  },
+  approval: {
+    title: "Pronto para aprovar?",
+    text: "Ao aprovar, alinhamos os próximos passos, materiais necessários e data de início do projeto da Massas Nonna Angela.",
+    button: "Aprovar no WhatsApp"
+  }
+});
+
 export const proposals = {
   "brooklyn-academia": baseProposal,
 
-  "donna-angela": proposalVariant({
-    visual: {
-      heroTitle: {
-        desktop: { fontSize: "65", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
-      },
-      heroHighlight: {
-        desktop: { fontSize: "40", fontWeight: "500", lineHeight: "", letterSpacing: "2", textAlign: "", color: "" }
-      },
-      heroLead: {
-        desktop: { fontSize: "20", fontWeight: "100", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
-      }
-    },
-    brand: {
-      identityArt: "/imagens identidade visual pixel demand/nonna.jpg"
-    },
-    client: {
-      name: "Massas Nonna Angela",
-      slug: "donna-angela",
-      proposalName: "Proposta de investimento",
-      validity: "7 dias",
-      date: "Maio de 2026"
-    },
-    contact: {
-      whatsappApproveText: "Quero aprovar a proposta da Pixel Demand para Massas Nonna Angela",
-      whatsappQuestionText: "Quero tirar uma dúvida sobre a proposta da Pixel Demand para Massas Nonna Angela"
-    },
-    hero: {
-      highlight: "Massas Nonna Angela"
-    },
-    intro: {
-      text: "A Massas Nonna Angela tem uma oportunidade direta de fortalecer percepção de valor, organizar melhor sua comunicação e transformar seus canais digitais em uma vitrine mais consistente para captação de clientes."
-    }
-  }),
+  "nonna-angela": nonnaAngelaProposal,
+
+  "donna-angela": nonnaAngelaProposal,
 
   "grand-villagio": proposalVariant({
     client: {

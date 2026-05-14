@@ -11,7 +11,7 @@ Este checkpoint representa a base estável oficial do sistema de propostas inter
 ## Rotas Funcionando
 
 - `/propostas/brooklyn-academia`
-- `/propostas/donna-angela`
+- `/propostas/nonna-angela`
 - `/propostas/grand-villagio`
 
 ## Funcionalidades Validadas

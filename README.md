@@ -19,7 +19,7 @@ npm run dev
 Depois acesse:
 
 - `http://localhost:5173/propostas/brooklyn-academia`
-- `http://localhost:5173/propostas/donna-angela`
+- `http://localhost:5173/propostas/nonna-angela`
 - `http://localhost:5173/propostas/grand-villagio`
 
 Também funciona no formato curto:
