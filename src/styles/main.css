@@ -2402,6 +2402,52 @@
         white-space: nowrap;
       }
 
+      /* ── Approve CTA button ─────────────────────────────── */
+      #pd-approve-link {
+        min-height: 64px;
+        padding: 20px 42px;
+        font-size: 1rem;
+        letter-spacing: 0.03em;
+        animation: pdApprovePulse 2.6s var(--ease-premium) infinite;
+      }
+
+      #pd-approve-link:hover {
+        transform: translateY(-3px) scale(1.03);
+        box-shadow:
+          0 0 0 7px color-mix(in srgb, var(--pd-lime) 12%, transparent),
+          0 18px 48px rgba(0, 0, 0, 0.3),
+          0 0 52px color-mix(in srgb, var(--pd-lime) 30%, transparent);
+        animation: none;
+      }
+
+      #pd-approve-link:active {
+        transform: translateY(0) scale(0.98);
+        animation: none;
+      }
+
+      @keyframes pdApprovePulse {
+        0%, 100% {
+          box-shadow:
+            0 0 0 0 color-mix(in srgb, var(--pd-lime) 38%, transparent),
+            0 0 28px color-mix(in srgb, var(--pd-lime) 24%, transparent);
+        }
+        55% {
+          box-shadow:
+            0 0 0 12px color-mix(in srgb, var(--pd-lime) 0%, transparent),
+            0 0 48px color-mix(in srgb, var(--pd-lime) 32%, transparent);
+        }
+      }
+
+      @media (max-width: 640px) {
+        #pd-approve-link {
+          min-height: 56px;
+          padding: 16px 28px;
+          font-size: 0.92rem;
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
       /* ── Package detail accordion ──────────────────────── */
 
       /* Container */
