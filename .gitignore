@@ -8,3 +8,4 @@ vite-dev.err.log
 *.log
 dist/
 node_modules/
+.claude/
