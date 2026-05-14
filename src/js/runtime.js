@@ -612,7 +612,8 @@
 
       function setupReveal() {
         const revealItems = $$(".pd-reveal");
-        if (!PROPOSTA.behavior.enableScrollReveal || !("IntersectionObserver" in window)) {
+        const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+        if (prefersReducedMotion || !PROPOSTA.behavior.enableScrollReveal || !("IntersectionObserver" in window)) {
           revealItems.forEach((item) => item.classList.add("is-visible"));
           return;
         }
@@ -622,11 +623,12 @@
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
                 entry.target.classList.add("is-visible");
-                observer.unobserve(entry.target);
+              } else {
+                entry.target.classList.remove("is-visible");
               }
             });
           },
-          { threshold: 0.12 }
+          { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
         );
 
         revealItems.forEach((item) => observer.observe(item));
