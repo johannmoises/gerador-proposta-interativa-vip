@@ -432,7 +432,8 @@ const nonnaAngelaProposal = proposalVariant({
     }
   },
   brand: {
-    identityArt: "/imagens identidade visual pixel demand/nonna.jpg"
+    identityArt: "/imagens identidade visual pixel demand/nonna.jpg",
+    identityLogo: "/nonna-angela-logo.png"
   },
   client: {
     name: "Massas Nonna Angela",
