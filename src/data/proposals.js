@@ -412,6 +412,7 @@ const nonnaAngelaProposal = proposalVariant({
     date: "Maio de 2026"
   },
   contact: {
+    whatsappNumber: "554491445267",
     whatsappApproveText: "Quero aprovar a proposta da Pixel Demand para Massas Nonna Angela",
     whatsappQuestionText: "Quero tirar uma dúvida sobre a proposta da Pixel Demand para Massas Nonna Angela"
   },
