@@ -393,19 +393,36 @@ export const proposals = {
   "brooklyn-academia": baseProposal,
 
   "donna-angela": proposalVariant({
+    visual: {
+      heroTitle: {
+        desktop: { fontSize: "65", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
+      },
+      heroHighlight: {
+        desktop: { fontSize: "40", fontWeight: "500", lineHeight: "", letterSpacing: "2", textAlign: "", color: "" }
+      },
+      heroLead: {
+        desktop: { fontSize: "20", fontWeight: "100", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
+      }
+    },
+    brand: {
+      identityArt: "/imagens identidade visual pixel demand/nonna.jpg"
+    },
     client: {
-      name: "Donna Angela",
+      name: "Massas Nonna Angela",
       slug: "donna-angela",
       proposalName: "Proposta de investimento",
       validity: "7 dias",
       date: "Maio de 2026"
     },
     contact: {
-      whatsappApproveText: "Quero aprovar a proposta da Pixel Demand para Donna Angela",
-      whatsappQuestionText: "Quero tirar uma d?vida sobre a proposta da Pixel Demand para Donna Angela"
+      whatsappApproveText: "Quero aprovar a proposta da Pixel Demand para Massas Nonna Angela",
+      whatsappQuestionText: "Quero tirar uma dúvida sobre a proposta da Pixel Demand para Massas Nonna Angela"
     },
     hero: {
-      highlight: "Donna Angela"
+      highlight: "Massas Nonna Angela"
+    },
+    intro: {
+      text: "A Massas Nonna Angela tem uma oportunidade direta de fortalecer percepção de valor, organizar melhor sua comunicação e transformar seus canais digitais em uma vitrine mais consistente para captação de clientes."
     }
   }),
 
@@ -419,7 +436,7 @@ export const proposals = {
     },
     contact: {
       whatsappApproveText: "Quero aprovar a proposta da Pixel Demand para Grand Villagio",
-      whatsappQuestionText: "Quero tirar uma d?vida sobre a proposta da Pixel Demand para Grand Villagio"
+      whatsappQuestionText: "Quero tirar uma dúvida sobre a proposta da Pixel Demand para Grand Villagio"
     },
     hero: {
       highlight: "Grand Villagio"

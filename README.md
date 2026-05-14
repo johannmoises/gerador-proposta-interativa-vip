@@ -46,16 +46,29 @@ backups/
 
 ## Criar Nova Proposta
 
+Fonte oficial publicada: `src/data/proposals.js`.
+
+O modo admin e o `localStorage` servem para rascunho, teste visual e ajuste rápido no navegador. A versão final que aparece na Vercel precisa estar salva nos arquivos do projeto.
+
 1. Abra `src/data/proposals.js`.
 2. Duplique uma proposta existente dentro de `proposals`.
-3. Troque `slug`, cliente, textos, valores, imagens, escopo, condições e CTA.
-4. Acesse a URL correspondente, por exemplo:
+3. Troque `slug`, cliente, textos, valores, imagens, escopo, condições e CTA diretamente no objeto da proposta.
+4. Coloque imagens oficiais de produção dentro de `public/`.
+5. Use caminhos públicos no objeto da proposta, por exemplo:
+
+```js
+"/imagens identidade visual pixel demand/nonna.jpg"
+```
+
+6. Acesse a URL correspondente, por exemplo:
 
 ```text
 /propostas/novo-cliente
 ```
 
 Antes de publicar, teste a nova proposta localmente no desktop e no mobile.
+
+Teste final correto: abrir a rota em uma aba anônima. Se a proposta estiver certa em aba anônima, os dados estão no código e vão aparecer na Vercel.
 
 ## Admin
 
@@ -80,6 +93,7 @@ npm run dev
 Checklist mínimo:
 
 - abrir a rota da proposta;
+- abrir a rota em aba anônima para validar sem `localStorage`;
 - testar desktop e mobile;
 - ativar admin com `Ctrl + Shift + E`;
 - editar um texto pelo `QuickEditModal`;
@@ -87,14 +101,20 @@ Checklist mínimo:
 - salvar rascunho e recarregar;
 - confirmar que o console não mostra erros.
 
+No PowerShell, se `npm run build` for bloqueado por política de execução, use:
+
+```bash
+npm.cmd run build
+```
+
 ## Publicação
 
-Fluxo recomendado:
+Fluxo oficial:
 
 ```bash
 git status
 git add .
-git commit -m "mensagem"
+git commit -m "Atualiza proposta do cliente X"
 git push
 ```
 
@@ -114,6 +134,10 @@ Deploy:
 - não remover `QuickEditModal`;
 - não remover `Ctrl + Shift + E`;
 - não remover `localStorage`;
+- não tratar `localStorage` como fonte final publicada;
+- não publicar imagens finais fora de `public/`;
+- não usar caminhos locais de desenvolvimento para imagens finais;
 - não mexer no runtime sem validar desktop e mobile;
 - não publicar sem `npm run build` e teste local;
+- não publicar sem conferir a proposta em aba anônima;
 - não alterar rotas, assets ou identidade visual sem motivo claro.
