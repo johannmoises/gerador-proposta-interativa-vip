@@ -399,6 +399,36 @@ const nonnaAngelaProposal = proposalVariant({
     },
     heroLead: {
       desktop: { fontSize: "20", fontWeight: "100", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
+    },
+    investmentTitle: {
+      desktop: { fontSize: "56", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
+    },
+    introText: {
+      desktop: { fontSize: "20", fontWeight: "500", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
+    },
+    packagesTitle: {
+      desktop: { fontSize: "60", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
+    },
+    servicesTitle: {
+      desktop: { fontSize: "59", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
+    },
+    diagnosisTitle: {
+      desktop: { fontSize: "55", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
+    },
+    introTitle: {
+      desktop: { fontSize: "60", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
+    },
+    detailsTitle: {
+      desktop: { fontSize: "57", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
+    },
+    timelineTitle: {
+      desktop: { fontSize: "58", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
+    },
+    scopeTitle: {
+      desktop: { fontSize: "60", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
+    },
+    conditionsTitle: {
+      desktop: { fontSize: "58", fontWeight: "", lineHeight: "", letterSpacing: "", textAlign: "", color: "" }
     }
   },
   brand: {
@@ -419,53 +449,45 @@ const nonnaAngelaProposal = proposalVariant({
   hero: {
     title: "Proposta de investimento",
     highlight: "Massas Nonna Angela",
-    lead: "Uma proposta para organizar a presença digital, valorizar os produtos, fortalecer a marca e facilitar pedidos com uma comunicação mais clara, premium e comercial."
+    lead: "Uma proposta para organizar a presença digital da Massas Nonna Angela com mais clareza, estética e intenção comercial."
   },
   summary: {
-    title: "Organizar a comunicação sem mudar a essência — só torná-la mais bonita, coerente e comercial.",
-    text: "Esta proposta apresenta como a Pixel Demand pode entrar como apoio profissional para elevar a qualidade visual, organizar a comunicação e fortalecer a presença digital da Massas Nonna Angela com mais consistência e resultado."
+    title: "Organizar a comunicação sem mudar a essência — só apresentar melhor o que já existe.",
+    text: "A Pixel Demand entra como apoio profissional para organizar a comunicação da Massas Nonna Angela, melhorar a apresentação dos conteúdos e criar materiais mais bonitos e comerciais, sem mudar a essência da marca."
   },
   intro: {
     title: "Visão do projeto",
-    description: "Resumo direto do que esta proposta resolve para a Massas Nonna Angela.",
-    text: "A ideia não é trocar o que já existe, nem mudar a essência da marca. É elevar o padrão da comunicação com imagens mais apetitosas, vídeos mais organizados e uma presença digital mais coerente com a qualidade real dos produtos da Massas Nonna Angela."
+    description: "O que esta proposta resolve para a Massas Nonna Angela.",
+    text: "A ideia não é mudar a essência da marca, mas valorizar melhor o que ela já tem: tradição, sabor, cuidado e produtos com apelo visual. A Pixel Demand entra como apoio para melhorar a apresentação dos conteúdos e organizar a comunicação de forma mais profissional."
   },
   diagnosis: {
     title: "Contexto",
     description: "Pontos de atenção identificados antes da construção da solução.",
     items: [
-      "A comunicação digital ainda pode transmitir com mais força a tradição, o sabor, a qualidade e o cuidado por trás da marca.",
-      "Existe uma oportunidade de padronizar posts, stories e materiais comerciais para valorizar cardápio, massas, molhos, encomendas e ofertas.",
-      "O conteúdo pode apresentar melhor diferenciais, processo artesanal, produtos, atendimento, rotina e prova social.",
-      "Uma linha visual mais consistente pode aumentar lembrança de marca, desejo, autoridade e conversão em pedidos."
+      "A comunicação pode transmitir melhor a tradição, o sabor e o cuidado da marca.",
+      "Os conteúdos podem ser mais organizados visualmente.",
+      "Produtos, bastidores e encomendas podem aparecer com mais clareza.",
+      "Uma presença mais consistente ajuda a fortalecer lembrança e confiança."
     ]
   },
   services: {
-    description: "Entregas principais organizadas para aumentar clareza, consistência e conversão.",
+    description: "O que a Pixel Demand oferece como apoio à comunicação da Massas Nonna Angela.",
     items: [
       {
-        title: "Direção visual",
-        text: "Sistema de comunicação com linguagem, ritmo, composição e padrão visual para produtos, ofertas e rotina da marca."
+        title: "Direção visual básica",
+        text: "Organização de linguagem, enquadramento e padrão visual para os conteúdos da marca."
       },
       {
-        title: "Social media",
-        text: "Planejamento de conteúdo e criativos para feed, stories e anúncios com foco em desejo, confiança e pedidos."
+        title: "Conteúdos para redes",
+        text: "Vídeos curtos e materiais simples para Reels, Stories e publicações no Instagram."
       },
       {
-        title: "Materiais comerciais",
-        text: "Peças de apoio para cardápio, combos, encomendas, datas especiais, campanhas sazonais e comunicação de ofertas."
+        title: "Apoio comercial",
+        text: "Chamadas e peças pontuais para produtos, encomendas, combos e datas especiais."
       },
       {
-        title: "Landing page",
-        text: "Página objetiva para apresentar a marca, produtos, diferenciais e contato com foco em conversão."
-      },
-      {
-        title: "Motion e vídeo",
-        text: "Cortes, animações e recursos visuais para aumentar retenção e percepção profissional nas campanhas."
-      },
-      {
-        title: "Gestão de projeto",
-        text: "Organização de entregas, alinhamentos, prioridades e acompanhamento durante o projeto."
+        title: "Organização mensal",
+        text: "Alinhamento de prioridades, materiais e entregas do mês conforme o plano escolhido."
       }
     ]
   },
@@ -475,48 +497,47 @@ const nonnaAngelaProposal = proposalVariant({
       {
         name: "Projeto Fechado",
         price: "R$ 1.000",
-        description: "Uma produção pontual para criar os primeiros materiais profissionais da Massas Nonna Angela, com vídeos e registros dos produtos, preparos e bastidores.",
+        description: "Produção pontual para criar materiais iniciais com melhor apresentação dos produtos, preparos e bastidores.",
         tag: "Pacote 01",
         recommended: false,
-        investmentNote: "Projeto Fechado — R$ 1.000, pagamento único na aprovação. Ideal para começar sem compromisso mensal e sentir, na prática, a diferença de uma comunicação mais profissional.",
+        investmentNote: "Projeto Fechado — R$ 1.000, pagamento único na aprovação. Ideal para começar sem compromisso mensal e sentir, na prática, a diferença de uma apresentação mais profissional.",
         details: [
           "1 captação presencial",
           "4 a 6 vídeos curtos editados",
-          "registros de massas, pratos, preparos e bastidores",
+          "registros de produtos, preparos e bastidores",
           "cortes para Reels e Stories",
-          "direção visual no dia da gravação",
           "entrega organizada dos arquivos finais"
         ]
       },
       {
         name: "Plano Mensal Essencial",
         price: "R$ 1.400/mês",
-        description: "Um plano mensal leve para manter a Massas Nonna Angela presente nas redes, com vídeos curtos, conteúdos comerciais e organização básica da comunicação.",
+        description: "Plano leve para manter a Massas Nonna Angela presente nas redes com conteúdos mais organizados e comerciais.",
         tag: "Pacote 02",
         recommended: true,
-        investmentNote: "Plano Mensal Essencial — R$ 1.400/mês, contrato mensal renovável. Condição especial para a fase inicial de organização da comunicação da Massas Nonna Angela. A proposta é começar de forma acessível, mostrar a diferença na prática e evoluir conforme a demanda real da marca.",
+        investmentNote: "Plano Mensal Essencial — R$ 1.400/mês, contrato mensal renovável. Uma condição inicial para organizar a comunicação da Massas Nonna Angela com constância, materiais melhores e um volume de entregas realista para a fase atual da marca.",
         details: [
           "1 captação presencial por mês",
           "6 a 8 vídeos curtos editados",
           "conteúdos para Reels e Stories",
-          "chamadas comerciais para encomendas e produtos",
+          "chamadas para produtos e encomendas",
           "organização básica dos conteúdos do mês",
-          "suporte na direção visual da marca"
+          "orientação visual simples"
         ]
       },
       {
         name: "Plano Mensal Completo",
         price: "R$ 2.000/mês",
-        description: "Um acompanhamento mais completo para fortalecer a presença digital da Massas Nonna Angela, com mais vídeos, posts, campanhas e apoio mensal na comunicação.",
+        description: "Plano com mais volume de conteúdo e apoio mensal para fortalecer a presença digital da marca.",
         tag: "Pacote 03",
         recommended: false,
-        investmentNote: "Plano Mensal Completo — R$ 2.000/mês, contrato mensal renovável. Indicado para transformar a comunicação em uma rotina mais forte, bonita e comercial, sem depender de postagens improvisadas.",
+        investmentNote: "Plano Mensal Completo — R$ 2.000/mês, contrato mensal renovável. Indicado para quem quer mais volume, mais consistência e um acompanhamento mais próximo da comunicação mensal.",
         details: [
           "2 captações presenciais por mês",
           "10 a 12 vídeos curtos editados",
-          "4 posts ou carrosséis simples",
+          "até 4 posts ou carrosséis simples",
           "Stories comerciais e institucionais",
-          "campanhas para datas especiais",
+          "apoio em datas especiais",
           "acompanhamento mensal da comunicação"
         ]
       }
@@ -525,60 +546,102 @@ const nonnaAngelaProposal = proposalVariant({
   details: {
     items: [
       {
-        title: "Identidade aplicada e direção criativa",
+        title: "Direção visual e organização dos conteúdos",
         open: true,
-        text: "Organização da linguagem visual para manter consistência em todos os pontos de contato da Massas Nonna Angela.",
+        text: "Organização da linguagem e do padrão visual para deixar os conteúdos mais coerentes e apresentáveis.",
         bullets: [
-          "Guia visual aplicado para redes, campanhas e materiais comerciais.",
-          "Paleta, uso tipográfico, composições e hierarquia visual.",
-          "Modelos base para comunicação recorrente de produtos e ofertas."
+          "Orientação de enquadramento, luz e composição nas captações.",
+          "Padrão visual básico para os conteúdos do mês.",
+          "Consistência entre vídeos, stories e publicações."
         ]
       },
       {
-        title: "Conteúdos e materiais digitais",
+        title: "Vídeos e conteúdos para redes sociais",
         open: false,
-        text: "Criativos pensados para comunicar sabor, qualidade, diferenciais e ofertas de forma mais comercial.",
+        text: "Produção de vídeos curtos e materiais simples para o Instagram da Massas Nonna Angela.",
         bullets: [
-          "Posts estáticos e carrosséis para produtos, bastidores e prova social.",
-          "Stories de campanha, relacionamento, ofertas e encomendas.",
-          "Peças comerciais para cardápio, combos, datas especiais e chamadas para pedido."
+          "Vídeos editados para Reels e Stories.",
+          "Registros de produtos, preparos, bastidores e encomendas.",
+          "Chamadas simples para produtos, ofertas e pedidos."
         ]
       },
       {
-        title: "Página de conversão",
+        title: "Apoio comercial e datas especiais",
         open: false,
-        text: "Landing page responsiva para apresentar a Massas Nonna Angela e conduzir o interessado ao contato.",
+        text: "Materiais pontuais de apoio para datas, encomendas e comunicação comercial básica.",
         bullets: [
-          "Hero com mensagem principal e chamada para pedido.",
-          "Blocos de produtos, diferenciais, benefícios e prova social.",
-          "CTA para WhatsApp e captura de interesse."
+          "Peças simples para combos, promoções e encomendas.",
+          "Apoio em datas como Dia das Mães, Natal e Páscoa.",
+          "Stories e chamadas comerciais conforme o plano escolhido."
         ]
+      }
+    ]
+  },
+  timeline: {
+    title: "Cronograma",
+    description: "Etapas simples para organizar o início da produção.",
+    items: [
+      {
+        period: "Etapa 01",
+        title: "Alinhamento inicial",
+        text: "Conversa rápida para entender prioridades, produtos, referências e o que a marca quer comunicar."
+      },
+      {
+        period: "Etapa 02",
+        title: "Captação e organização",
+        text: "Visita presencial para registrar produtos, preparos e bastidores com direção visual básica."
+      },
+      {
+        period: "Etapa 03",
+        title: "Produção dos conteúdos",
+        text: "Edição dos vídeos e materiais conforme o pacote aprovado."
+      },
+      {
+        period: "Etapa 04",
+        title: "Entrega e ajustes",
+        text: "Entrega organizada dos arquivos finais e ajustes combinados dentro do escopo."
       }
     ]
   },
   scope: {
     included: [
-      "Planejamento e direção visual das entregas descritas.",
-      "Criação dos materiais previstos no pacote aprovado.",
-      "Ajustes de refinamento dentro do escopo combinado.",
-      "Orientação de uso e organização final dos arquivos."
+      "Direção visual básica nas captações.",
+      "Edição dos materiais previstos no pacote aprovado.",
+      "Ajustes dentro do escopo combinado.",
+      "Entrega organizada dos arquivos finais."
     ],
     excluded: [
-      "Gestão de tráfego pago ou verba de mídia.",
-      "Produção fotográfica ou captação presencial extra não prevista no escopo.",
-      "Demandas urgentes fora do cronograma combinado.",
-      "Novas páginas, peças ou campanhas não listadas na proposta."
+      "Tráfego pago ou verba de mídia.",
+      "Captações presenciais extras fora do pacote.",
+      "Demandas urgentes fora do combinado.",
+      "Peças, vídeos ou campanhas não previstos na proposta."
     ]
   },
   investment: {
     title: "Investimento recomendado",
     packageName: "Plano Mensal Essencial",
     price: "R$ 1.400/mês",
-    note: "Plano Mensal Essencial — R$ 1.400/mês, contrato mensal renovável. Condição especial para a fase inicial de organização da comunicação da Massas Nonna Angela. A proposta é começar de forma acessível, mostrar a diferença na prática e evoluir conforme a demanda real da marca."
+    note: "Plano Mensal Essencial — R$ 1.400/mês. Uma condição inicial para organizar a comunicação da Massas Nonna Angela com constância, materiais melhores e um volume de entregas realista para a fase atual da marca."
+  },
+  conditions: {
+    items: [
+      {
+        title: "Início",
+        text: "O trabalho começa após aprovação da proposta e pagamento da primeira mensalidade."
+      },
+      {
+        title: "Pagamento",
+        text: "Pagamento mensal recorrente. O Projeto Fechado é pago integralmente na aprovação."
+      },
+      {
+        title: "Validade",
+        text: "Valores e escopo válidos por 7 dias a partir do envio desta proposta."
+      }
+    ]
   },
   approval: {
     title: "Pronto para aprovar?",
-    text: "Ao aprovar, alinhamos os próximos passos, materiais necessários e data de início do projeto da Massas Nonna Angela.",
+    text: "Ao aprovar, alinhamos os próximos passos e a data de início. Sem burocracia.",
     button: "Aprovar no WhatsApp"
   }
 });
